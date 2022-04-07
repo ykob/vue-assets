@@ -7,7 +7,7 @@
     :to="to"
     @click="$emit('click', $event)"
   >
-    <slot></slot>
+    <slot />
   </component>
 </template>
 
