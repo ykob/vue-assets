@@ -44,9 +44,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .button {
-  appearance: none;
   box-sizing: border-box;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

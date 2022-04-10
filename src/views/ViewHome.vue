@@ -1,5 +1,5 @@
 <template>
-  <h2>Buttons</h2>
+  <h2 class="mb-4 text-3xl">Buttons</h2>
   <ButtonBasics> Button Basics </ButtonBasics>
 </template>
 
