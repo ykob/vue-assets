@@ -34,7 +34,7 @@ export default defineComponent({
   computed: {
     classnames(): { [key: string]: boolean } {
       return {
-        error: this.error
+        error: this.error,
       }
     },
     styles(): { [key: string]: string } {
