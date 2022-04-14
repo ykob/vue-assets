@@ -46,8 +46,8 @@ export default defineComponent({
 .button {
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border: 0;
 }
 </style>
