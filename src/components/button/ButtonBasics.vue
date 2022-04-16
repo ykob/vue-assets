@@ -1,7 +1,7 @@
 <template>
   <component
     v-bind="$attrs"
-    class="button"
+    class="button bg-primary-500"
     :class="classnames"
     :is="tag"
     :to="to"
