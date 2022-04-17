@@ -1,6 +1,17 @@
 <template>
   <h2 class="mb-4 text-3xl">Buttons</h2>
-  <ButtonBasics> Button Basics </ButtonBasics>
+  <div class="flex gap-4">
+    <ButtonBasics> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-primary-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-secondary-500">
+      Button
+    </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-info-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-accent-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-success-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-danger-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-warning-500"> Button </ButtonBasics>
+  </div>
 </template>
 
 <script lang="ts">
