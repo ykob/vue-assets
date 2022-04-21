@@ -6,10 +6,17 @@
     <ButtonBasics class="text-neutral-50 bg-secondary-500">
       Button
     </ButtonBasics>
-    <ButtonBasics class="text-neutral-50 bg-info-500"> Button </ButtonBasics>
-    <ButtonBasics class="text-neutral-50 bg-accent-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-information-500">
+      Button
+    </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-attention-500">
+      Button
+    </ButtonBasics>
     <ButtonBasics class="text-neutral-50 bg-success-500"> Button </ButtonBasics>
-    <ButtonBasics class="text-neutral-50 bg-danger-500"> Button </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-destructive-500">
+      Button
+    </ButtonBasics>
+    <ButtonBasics class="text-neutral-50 bg-error-500"> Button </ButtonBasics>
     <ButtonBasics class="text-neutral-50 bg-warning-500"> Button </ButtonBasics>
   </div>
 </template>
