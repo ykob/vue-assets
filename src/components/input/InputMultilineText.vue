@@ -47,12 +47,12 @@ export default defineComponent({
   methods: {
     changeHandler(event: Event): void {
       const { target } = event
-      if (!(target instanceof HTMLInputElement)) return
+      if (!(target instanceof HTMLTextAreaElement)) return
       this.$emit('change', target.value)
     },
     inputHandler(event: Event): void {
       const { target } = event
-      if (!(target instanceof HTMLInputElement)) return
+      if (!(target instanceof HTMLTextAreaElement)) return
       this.$emit('input', target.value)
     },
   },
