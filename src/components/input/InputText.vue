@@ -51,9 +51,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 input {
+  box-sizing: border-box;
   height: 44px;
   appearance: none;
-  box-sizing: border-box;
   padding-right: 16px;
   padding-left: 16px;
   border: 1px solid;

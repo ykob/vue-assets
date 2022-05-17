@@ -65,7 +65,7 @@ textarea {
   box-sizing: border-box;
   display: block;
   padding: 16px;
-  border: 1px solid;
   line-height: 1.5;
+  border: 1px solid;
 }
 </style>
