@@ -4,8 +4,8 @@
     :class="classnames"
     :style="styles"
     :value="value"
-    @input="$emit('input', $event.target.value)"
-    @change="$emit('change', $event.target.value)"
+    @change="changeHandler"
+    @input="inputHandler"
   />
 </template>
 
@@ -42,6 +42,18 @@ export default defineComponent({
         width: this.width,
         height: this.height,
       }
+    },
+  },
+  methods: {
+    changeHandler(event: Event): void {
+      const { target } = event
+      if (!(target instanceof HTMLInputElement)) return
+      this.$emit('change', target.value)
+    },
+    inputHandler(event: Event): void {
+      const { target } = event
+      if (!(target instanceof HTMLInputElement)) return
+      this.$emit('input', target.value)
     },
   },
 })
