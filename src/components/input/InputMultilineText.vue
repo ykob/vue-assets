@@ -1,9 +1,8 @@
 <template>
   <textarea
     v-bind="$attrs"
+    class="rounded"
     :class="classnames"
-    :style="styles"
-    :value="value"
     @change="changeHandler"
     @input="inputHandler"
   />
@@ -14,18 +13,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    value: {
-      type: String,
-      default: '',
-    },
-    width: {
-      type: String,
-      default: '100%',
-    },
-    height: {
-      type: String,
-      default: '240px',
-    },
     error: {
       type: Boolean,
       default: false,
@@ -34,13 +21,8 @@ export default defineComponent({
   computed: {
     classnames(): { [key: string]: boolean } {
       return {
-        error: this.error,
-      }
-    },
-    styles(): { [key: string]: string } {
-      return {
-        width: this.width,
-        height: this.height,
+        'border-neutral-500': this.error === false,
+        'bg-neutral-50': true,
       }
     },
   },
@@ -66,6 +48,7 @@ textarea {
   display: block;
   padding: 16px;
   line-height: 1.5;
-  border: 1px solid;
+  border-style: solid;
+  border-width: 1px;
 }
 </style>

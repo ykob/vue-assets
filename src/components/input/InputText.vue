@@ -1,8 +1,8 @@
 <template>
   <input
     v-bind="$attrs"
+    class="rounded"
     :class="classnames"
-    :style="styles"
     @change="changeHandler"
     @input="inputHandler"
   />
@@ -13,10 +13,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    width: {
-      type: String,
-      default: '100%',
-    },
     error: {
       type: Boolean,
       default: false,
@@ -25,12 +21,8 @@ export default defineComponent({
   computed: {
     classnames(): { [key: string]: boolean } {
       return {
-        error: this.error,
-      }
-    },
-    styles(): { [key: string]: string } {
-      return {
-        width: this.width,
+        'border-neutral-500': this.error === false,
+        'bg-neutral-50': true,
       }
     },
   },
@@ -45,7 +37,7 @@ export default defineComponent({
       if (!(target instanceof HTMLInputElement)) return
       this.$emit('input', target.value)
     },
-  }
+  },
 })
 </script>
 
@@ -56,6 +48,7 @@ input {
   appearance: none;
   padding-right: 16px;
   padding-left: 16px;
-  border: 1px solid;
+  border-style: solid;
+  border-width: 1px;
 }
 </style>
