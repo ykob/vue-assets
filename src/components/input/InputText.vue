@@ -35,7 +35,7 @@ export default defineComponent({
     inputHandler(event: Event): void {
       const { target } = event
       if (!(target instanceof HTMLInputElement)) return
-      this.$emit('input', target.value)
+      this.$emit('update:modelValue', target.value)
     },
   },
 })
