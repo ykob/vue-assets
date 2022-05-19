@@ -1,7 +1,7 @@
 <template>
   <input
     v-bind="$attrs"
-    class="rounded"
+    class="placeholder-neutral-400 rounded"
     :class="classnames"
     @change="changeHandler"
     @input="inputHandler"

@@ -19,9 +19,14 @@
     <ButtonBasics class="text-neutral-50 bg-error-500"> Button </ButtonBasics>
     <ButtonBasics class="text-neutral-50 bg-warning-500"> Button </ButtonBasics>
   </div>
+  <div class="flex flex-col gap-4 mb-4">
+    <InputText v-model="inputText" placeholder="placeholder" />
+  </div>
   <div class="flex flex-col gap-4">
-    <InputText v-model="inputText" />
-    <InputMultilineText v-model="InputMultilineText" />
+    <InputMultilineText
+      v-model="InputMultilineText"
+      placeholder="placeholder"
+    />
   </div>
 </template>
 
