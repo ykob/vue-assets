@@ -16,10 +16,6 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ButtonBasics',
   props: {
-    isLoading: {
-      type: Boolean,
-      default: false,
-    },
     tag: {
       type: String,
       default: 'button',
