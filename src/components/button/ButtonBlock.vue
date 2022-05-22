@@ -29,8 +29,8 @@ export default defineComponent({
       default: 'button',
     },
     to: {
-      type: String,
-      default: '',
+      type: String || undefined,
+      default: undefined,
     },
   },
   computed: {
