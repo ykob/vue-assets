@@ -25,7 +25,14 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      return ['h-10', 'px-4', 'rounded', 'text-neutral-50', 'w-full']
+      return [
+        'h-10',
+        'px-4',
+        'rounded',
+        'text-neutral-50',
+        'transition-colors',
+        'w-full',
+      ]
     },
   },
 })
