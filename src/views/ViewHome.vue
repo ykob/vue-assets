@@ -28,11 +28,21 @@
       placeholder="placeholder"
     />
   </div>
+  <h2 class="mb-4 text-3xl">Icons</h2>
+  <div class="flex gap-4 mb-4">
+    <icon-basics :d="icon.mdiGithub" size="xs" />
+    <icon-basics :d="icon.mdiGithub" size="s" />
+    <icon-basics :d="icon.mdiGithub" size="m" />
+    <icon-basics :d="icon.mdiGithub" size="l" />
+    <icon-basics :d="icon.mdiGithub" size="xl" />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { mdiGithub } from '@mdi/js'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
+import IconBasics from '@/components/icon/IconBasics.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
 
@@ -40,10 +50,14 @@ export default defineComponent({
   name: 'ViewHome',
   components: {
     ButtonBasics,
+    IconBasics,
     InputMultilineText,
     InputText,
   },
   data: () => ({
+    icon: {
+      mdiGithub,
+    },
     inputText: '',
     InputMultilineText: '',
   }),
