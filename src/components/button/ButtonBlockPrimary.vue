@@ -25,7 +25,7 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      return ['bg-primary-500']
+      return ['bg-primary-500', 'active:bg-primary-600', 'hover:bg-primary-400']
     },
   },
 })
