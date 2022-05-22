@@ -1,11 +1,5 @@
 <template>
-  <component
-    v-bind="$attrs"
-    class="button"
-    :is="tag"
-    :to="to"
-    @click="$emit('click', $event)"
-  >
+  <component class="button" :is="tag" @click="$emit('click', $event)">
     <slot />
   </component>
 </template>
@@ -19,10 +13,6 @@ export default defineComponent({
     tag: {
       type: String,
       default: 'button',
-    },
-    to: {
-      type: String || undefined,
-      default: undefined,
     },
   },
 })

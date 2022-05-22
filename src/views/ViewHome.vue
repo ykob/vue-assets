@@ -2,7 +2,7 @@
   <h2 class="mb-4 text-3xl">Buttons</h2>
   <div class="flex gap-4 mb-4">
     <button-block> Button </button-block>
-    <button-block class="text-neutral-50 bg-primary-500"> Button </button-block>
+    <button-block-primary> Button </button-block-primary>
     <button-block class="text-neutral-50 bg-secondary-500">
       Button
     </button-block>
@@ -33,6 +33,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
+import ButtonBlockPrimary from '@/components/button/ButtonBlockPrimary.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
 
@@ -40,6 +41,7 @@ export default defineComponent({
   name: 'ViewHome',
   components: {
     ButtonBlock,
+    ButtonBlockPrimary,
     InputMultilineText,
     InputText,
   },

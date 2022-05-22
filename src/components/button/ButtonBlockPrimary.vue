@@ -1,17 +1,17 @@
 <template>
-  <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
+  <button-block :class="classnames" :tag="tag" @click="$emit('click', $event)">
     <slot />
-  </button-basics>
+  </button-block>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ButtonBasics from './ButtonBasics.vue'
+import ButtonBlock from './ButtonBlock.vue'
 
 export default defineComponent({
-  name: 'ButtonBlock',
+  name: 'ButtonBlockPrimary',
   components: {
-    ButtonBasics,
+    ButtonBlock,
   },
   props: {
     isLoading: {
@@ -25,7 +25,7 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      return ['h-10', 'px-4', 'rounded', 'text-neutral-50', 'w-full']
+      return ['bg-primary-500']
     },
   },
 })
