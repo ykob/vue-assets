@@ -3,9 +3,7 @@
   <div class="flex gap-4 mb-4">
     <button-block> Button </button-block>
     <button-block-primary> Button </button-block-primary>
-    <button-block class="text-neutral-50 bg-secondary-500">
-      Button
-    </button-block>
+    <button-block-secondary> Button </button-block-secondary>
     <button-block class="text-neutral-50 bg-information-500">
       Button
     </button-block>
@@ -34,6 +32,7 @@
 import { defineComponent } from 'vue'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
 import ButtonBlockPrimary from '@/components/button/ButtonBlockPrimary.vue'
+import ButtonBlockSecondary from '@/components/button/ButtonBlockSecondary.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
 
@@ -42,6 +41,7 @@ export default defineComponent({
   components: {
     ButtonBlock,
     ButtonBlockPrimary,
+    ButtonBlockSecondary,
     InputMultilineText,
     InputText,
   },
