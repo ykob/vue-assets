@@ -1,7 +1,6 @@
 <template>
   <h2 class="mb-4 text-3xl">Buttons</h2>
   <div class="flex gap-4 mb-4">
-    <button-block> Button </button-block>
     <button-block-primary> Button </button-block-primary>
     <button-block-secondary> Button </button-block-secondary>
     <button-block class="text-neutral-50 bg-information-500">
@@ -16,6 +15,13 @@
     </button-block>
     <button-block class="text-neutral-50 bg-error-500"> Button </button-block>
     <button-block class="text-neutral-50 bg-warning-500"> Button </button-block>
+  </div>
+  <h3>With Icon</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block-primary :icon="icon.mdiGithub"> Button </button-block-primary>
+    <button-block-secondary :icon="icon.mdiGithub">
+      Button
+    </button-block-secondary>
   </div>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
