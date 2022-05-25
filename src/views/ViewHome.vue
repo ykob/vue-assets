@@ -16,13 +16,14 @@
     <button-block class="text-neutral-50 bg-error-500"> Button </button-block>
     <button-block class="text-neutral-50 bg-warning-500"> Button </button-block>
   </div>
-  <h3>With Icon</h3>
+  <h3 class="mb-4 text-xl">With Icon</h3>
   <div class="flex gap-4 mb-4">
     <button-block-primary :icon="icon.mdiGithub"> Button </button-block-primary>
     <button-block-secondary :icon="icon.mdiGithub">
       Button
     </button-block-secondary>
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
   </div>
@@ -32,7 +33,7 @@
       placeholder="placeholder"
     />
   </div>
-  <h2 class="mb-4 text-3xl">Icons</h2>
+  <h2 class="mt-12 mb-4 text-3xl">Icons</h2>
   <div class="flex gap-4 mb-4">
     <icon-basics :d="icon.mdiGithub" size="xs" />
     <icon-basics :d="icon.mdiGithub" size="s" />
