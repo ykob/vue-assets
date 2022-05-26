@@ -1,27 +1,41 @@
 <template>
   <h2 class="mb-4 text-3xl">Buttons</h2>
   <div class="flex gap-4 mb-4">
-    <button-block-primary> Button </button-block-primary>
-    <button-block-secondary> Button </button-block-secondary>
-    <button-block class="text-neutral-50 bg-information-500">
-      Button
-    </button-block>
-    <button-block class="text-neutral-50 bg-attention-500">
-      Button
-    </button-block>
-    <button-block class="text-neutral-50 bg-success-500"> Button </button-block>
-    <button-block class="text-neutral-50 bg-destructive-500">
-      Button
-    </button-block>
-    <button-block class="text-neutral-50 bg-error-500"> Button </button-block>
-    <button-block class="text-neutral-50 bg-warning-500"> Button </button-block>
+    <button-block buttonType="primary"> Button </button-block>
+    <button-block buttonType="secondary"> Button </button-block>
+    <button-block buttonType="information"> Button </button-block>
+    <button-block buttonType="attention"> Button </button-block>
+    <button-block buttonType="success"> Button </button-block>
+    <button-block buttonType="destructive"> Button </button-block>
+    <button-block buttonType="error"> Button </button-block>
+    <button-block buttonType="warning"> Button </button-block>
   </div>
   <h3 class="mb-4 text-xl">With Icon</h3>
   <div class="flex gap-4 mb-4">
-    <button-block-primary :icon="icon.mdiGithub"> Button </button-block-primary>
-    <button-block-secondary :icon="icon.mdiGithub">
+    <button-block buttonType="primary" :icon="icon.mdiGithub">
       Button
-    </button-block-secondary>
+    </button-block>
+    <button-block buttonType="secondary" :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="information" :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="attention" :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="success" :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="destructive" :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="error" :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="warning" :icon="icon.mdiGithub">
+      Button
+    </button-block>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
@@ -47,8 +61,6 @@
 import { defineComponent } from 'vue'
 import { mdiGithub } from '@mdi/js'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
-import ButtonBlockPrimary from '@/components/button/ButtonBlockPrimary.vue'
-import ButtonBlockSecondary from '@/components/button/ButtonBlockSecondary.vue'
 import IconBasics from '@/components/icon/IconBasics.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
@@ -57,8 +69,6 @@ export default defineComponent({
   name: 'ViewHome',
   components: {
     ButtonBlock,
-    ButtonBlockPrimary,
-    ButtonBlockSecondary,
     IconBasics,
     InputMultilineText,
     InputText,
