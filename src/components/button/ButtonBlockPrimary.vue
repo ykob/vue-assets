@@ -1,6 +1,6 @@
 <template>
   <button-block :class="classnames" :tag="tag" @click="$emit('click', $event)">
-    <slot />
+    <slot></slot>
   </button-block>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <component class="button" :is="tag" @click="$emit('click', $event)">
-    <slot />
+    <slot></slot>
   </component>
 </template>
 
