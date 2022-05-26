@@ -1,12 +1,6 @@
 <template>
-  <component
-    v-bind="$attrs"
-    class="button"
-    :is="tag"
-    :to="to"
-    @click="$emit('click', $event)"
-  >
-    <slot />
+  <component class="button" :is="tag" @click="$emit('click', $event)">
+    <slot></slot>
   </component>
 </template>
 
@@ -16,17 +10,9 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ButtonBasics',
   props: {
-    isLoading: {
-      type: Boolean,
-      default: false,
-    },
     tag: {
       type: String,
       default: 'button',
-    },
-    to: {
-      type: String,
-      default: '',
     },
   },
 })
