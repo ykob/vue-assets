@@ -1,6 +1,6 @@
 <template>
   <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
-    <icon-basics v-if="icon !== undefined" class="mr-2" :d="icon" />
+    <icon-basics v-if="icon !== undefined" :d="icon" />
     <slot></slot>
   </button-basics>
 </template>
@@ -97,6 +97,7 @@ export default defineComponent({
       }
       return [
         ...colorClassnames(this.buttonType),
+        'gap-2',
         'h-10',
         'px-4',
         'rounded',
