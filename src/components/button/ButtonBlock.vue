@@ -36,6 +36,10 @@ export default defineComponent({
       type: String as PropType<ButtonType>,
       default: 'primary',
     },
+    circle: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: String || undefined,
       default: undefined,
@@ -103,20 +107,20 @@ export default defineComponent({
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
         switch (buttonSize) {
           case 's':
-            return ['w-full', 'h-7']
+            return [this.circle ? 'w-7' : 'w-full', 'h-7']
           case 'm':
           default:
-            return ['w-full', 'h-10']
+            return [this.circle ? 'w-10' : 'w-full', 'h-10']
           case 'l':
-            return ['w-full', 'h-14']
+            return [this.circle ? 'w-14' : 'w-full', 'h-14']
         }
       }
+
       return [
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
+        ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
         'gap-2',
-        'px-4',
-        'rounded',
         'text-neutral-50',
         'transition-colors',
       ]
