@@ -37,6 +37,42 @@
       Button
     </button-block>
   </div>
+  <h3 class="mb-4 text-xl">Sizes</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s"> Button S </button-block>
+    <button-block buttonSize="s" buttonType="secondary">
+      Button S
+    </button-block>
+    <button-block buttonSize="m"> Button M </button-block>
+    <button-block buttonSize="m" buttonType="secondary">
+      Button M
+    </button-block>
+    <button-block buttonSize="l"> Button L </button-block>
+    <button-block buttonSize="l" buttonType="secondary">
+      Button L
+    </button-block>
+  </div>
+  <h3 class="mb-4 text-xl">Sizes</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" circle>
+      <icon-basics :d="icon.mdiGithub" size="s" />
+    </button-block>
+    <button-block buttonSize="s" buttonType="secondary" circle>
+      <icon-basics :d="icon.mdiGithub" size="s" />
+    </button-block>
+    <button-block buttonSize="m" circle>
+      <icon-basics :d="icon.mdiGithub" size="m" />
+    </button-block>
+    <button-block buttonSize="m" buttonType="secondary" circle>
+      <icon-basics :d="icon.mdiGithub" size="m" />
+    </button-block>
+    <button-block buttonSize="l" circle>
+      <icon-basics :d="icon.mdiGithub" size="l" />
+    </button-block>
+    <button-block buttonSize="l" buttonType="secondary" circle>
+      <icon-basics :d="icon.mdiGithub" size="l" />
+    </button-block>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />

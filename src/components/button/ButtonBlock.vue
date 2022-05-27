@@ -10,6 +10,7 @@ import { defineComponent, PropType } from 'vue'
 import ButtonBasics from './ButtonBasics.vue'
 import IconBasics from '@/components/icon/IconBasics.vue'
 
+type ButtonSize = 's' | 'm' | 'l'
 type ButtonType =
   | 'primary'
   | 'secondary'
@@ -27,9 +28,17 @@ export default defineComponent({
     IconBasics,
   },
   props: {
+    buttonSize: {
+      type: String as PropType<ButtonSize>,
+      default: 'm',
+    },
     buttonType: {
       type: String as PropType<ButtonType>,
       default: 'primary',
+    },
+    circle: {
+      type: Boolean,
+      default: false,
     },
     icon: {
       type: String || undefined,
@@ -95,15 +104,25 @@ export default defineComponent({
             ]
         }
       }
+      const sizeClassnames = (buttonSize: ButtonSize): string[] => {
+        switch (buttonSize) {
+          case 's':
+            return [this.circle ? 'w-7' : 'w-full', 'h-7']
+          case 'm':
+          default:
+            return [this.circle ? 'w-10' : 'w-full', 'h-10']
+          case 'l':
+            return [this.circle ? 'w-14' : 'w-full', 'h-14']
+        }
+      }
+
       return [
         ...colorClassnames(this.buttonType),
+        ...sizeClassnames(this.buttonSize),
+        ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
         'gap-2',
-        'h-10',
-        'px-4',
-        'rounded',
         'text-neutral-50',
         'transition-colors',
-        'w-full',
       ]
     },
   },
