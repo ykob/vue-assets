@@ -7,19 +7,11 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import ButtonBasics from './ButtonBasics.vue'
+import ButtonBasics from '@/components/button/ButtonBasics.vue'
 import IconBasics from '@/components/icon/IconBasics.vue'
+import { Semantics } from '@/types/'
 
 type ButtonSize = 's' | 'm' | 'l'
-type ButtonType =
-  | 'primary'
-  | 'secondary'
-  | 'information'
-  | 'attention'
-  | 'success'
-  | 'destructive'
-  | 'error'
-  | 'warning'
 
 export default defineComponent({
   name: 'ButtonBlock',
@@ -33,7 +25,7 @@ export default defineComponent({
       default: 'm',
     },
     buttonType: {
-      type: String as PropType<ButtonType>,
+      type: String as PropType<Semantics>,
       default: 'primary',
     },
     circle: {
@@ -55,7 +47,7 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      const colorClassnames = (buttonType: ButtonType): string[] => {
+      const colorClassnames = (buttonType: Semantics): string[] => {
         switch (buttonType) {
           case 'primary':
           default:
