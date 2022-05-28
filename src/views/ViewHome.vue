@@ -1,5 +1,5 @@
 <template>
-  <h2 class="mb-4 text-3xl">Buttons</h2>
+  <h2 class="mb-4 text-3xl">Block Button</h2>
   <div class="flex gap-4 mb-4">
     <button-block buttonType="primary"> Button </button-block>
     <button-block buttonType="secondary"> Button </button-block>
@@ -52,7 +52,7 @@
       Button L
     </button-block>
   </div>
-  <h3 class="mb-4 text-xl">Sizes</h3>
+  <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-block buttonSize="s" circle>
       <icon-basics :d="icon.mdiGithub" size="s" />
