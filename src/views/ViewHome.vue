@@ -126,6 +126,27 @@
       Button L
     </button-outline>
   </div>
+  <h3 class="mb-4 text-xl">Circle</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" circle>
+      <icon-basics :d="icon.mdiGithub" size="s" />
+    </button-outline>
+    <button-outline buttonSize="s" buttonType="secondary" circle>
+      <icon-basics :d="icon.mdiGithub" size="s" />
+    </button-outline>
+    <button-outline buttonSize="m" circle>
+      <icon-basics :d="icon.mdiGithub" size="m" />
+    </button-outline>
+    <button-outline buttonSize="m" buttonType="secondary" circle>
+      <icon-basics :d="icon.mdiGithub" size="m" />
+    </button-outline>
+    <button-outline buttonSize="l" circle>
+      <icon-basics :d="icon.mdiGithub" size="l" />
+    </button-outline>
+    <button-outline buttonSize="l" buttonType="secondary" circle>
+      <icon-basics :d="icon.mdiGithub" size="l" />
+    </button-outline>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
