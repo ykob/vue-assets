@@ -1,5 +1,5 @@
 <template>
-  <h2 class="mb-4 text-3xl">Block Button</h2>
+  <h2 class="mt-12 mb-4 text-3xl">Block Button</h2>
   <div class="flex gap-4 mb-4">
     <button-block buttonType="primary"> Button </button-block>
     <button-block buttonType="secondary"> Button </button-block>
@@ -73,7 +73,7 @@
       <icon-basics :d="icon.mdiGithub" size="l" />
     </button-block>
   </div>
-  <h2 class="mb-4 text-3xl">Block Outline</h2>
+  <h2 class="mt-12 mb-4 text-3xl">Block Outline</h2>
   <div class="flex gap-4 mb-4">
     <button-outline buttonType="primary"> Button </button-outline>
     <button-outline buttonType="secondary"> Button </button-outline>
