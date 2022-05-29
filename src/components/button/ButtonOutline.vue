@@ -140,6 +140,7 @@ export default defineComponent({
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
         ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
+        'bg-neutral-50',
         'border-2',
         'border-solid',
         'gap-2',
