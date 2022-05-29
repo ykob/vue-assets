@@ -111,6 +111,21 @@
       Button
     </button-outline>
   </div>
+  <h3 class="mb-4 text-xl">Sizes</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s"> Button S </button-outline>
+    <button-outline buttonSize="s" buttonType="secondary">
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m"> Button M </button-outline>
+    <button-outline buttonSize="m" buttonType="secondary">
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l"> Button L </button-outline>
+    <button-outline buttonSize="l" buttonType="secondary">
+      Button L
+    </button-outline>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
