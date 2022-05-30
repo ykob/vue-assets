@@ -52,47 +52,75 @@ export default defineComponent({
           case 'primary':
           default:
             return [
-              'bg-primary-500',
+              'border-primary-500',
+              'text-primary-500',
               'active:bg-primary-600',
+              'active:border-primary-600',
               'hover:bg-primary-400',
+              'hover:border-primary-400',
             ]
           case 'secondary':
             return [
-              'bg-secondary-500',
+              'border-secondary-500',
+              'text-secondary-500',
               'active:bg-secondary-600',
+              'active:border-secondary-600',
               'hover:bg-secondary-400',
+              'hover:border-secondary-400',
             ]
           case 'information':
             return [
-              'bg-information-500',
+              'border-information-500',
+              'text-information-500',
               'active:bg-information-600',
+              'active:border-information-600',
               'hover:bg-information-400',
+              'hover:border-information-400',
             ]
           case 'attention':
             return [
-              'bg-attention-500',
+              'border-attention-500',
+              'text-attention-500',
               'active:bg-attention-600',
+              'active:border-attention-600',
               'hover:bg-attention-400',
+              'hover:border-attention-400',
             ]
           case 'success':
             return [
-              'bg-success-500',
+              'border-success-500',
+              'text-success-500',
               'active:bg-success-600',
+              'active:border-success-600',
               'hover:bg-success-400',
+              'hover:border-success-400',
             ]
           case 'destructive':
             return [
-              'bg-destructive-500',
+              'border-destructive-500',
+              'text-destructive-500',
               'active:bg-destructive-600',
+              'active:border-destructive-600',
               'hover:bg-destructive-400',
+              'hover:border-destructive-400',
             ]
           case 'error':
-            return ['bg-error-500', 'active:bg-error-600', 'hover:bg-error-400']
+            return [
+              'border-error-500',
+              'text-error-500',
+              'active:bg-error-600',
+              'active:border-error-600',
+              'hover:bg-error-400',
+              'hover:border-error-400',
+            ]
           case 'warning':
             return [
-              'bg-warning-500',
+              'border-warning-500',
+              'text-warning-500',
               'active:bg-warning-600',
+              'active:border-warning-600',
               'hover:bg-warning-400',
+              'hover:border-warning-400',
             ]
         }
       }
@@ -112,9 +140,12 @@ export default defineComponent({
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
         ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
+        'bg-neutral-50',
+        'border-2',
+        'border-solid',
         'gap-2',
-        'text-neutral-50',
         'transition-colors',
+        'hover:text-neutral-50',
       ]
     },
   },
