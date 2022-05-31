@@ -147,6 +147,17 @@
       <icon-basics :d="icon.mdiGithub" size="l" />
     </button-outline>
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Button Transparent</h2>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonType="primary"> Button </button-transparent>
+    <button-transparent buttonType="secondary"> Button </button-transparent>
+    <button-transparent buttonType="information"> Button </button-transparent>
+    <button-transparent buttonType="attention"> Button </button-transparent>
+    <button-transparent buttonType="success"> Button </button-transparent>
+    <button-transparent buttonType="destructive"> Button </button-transparent>
+    <button-transparent buttonType="error"> Button </button-transparent>
+    <button-transparent buttonType="warning"> Button </button-transparent>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
@@ -172,6 +183,7 @@ import { defineComponent } from 'vue'
 import { mdiGithub } from '@mdi/js'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
 import ButtonOutline from '@/components/button/ButtonOutline.vue'
+import ButtonTransparent from '@/components/button/ButtonTransparent.vue'
 import IconBasics from '@/components/icon/IconBasics.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
@@ -181,6 +193,7 @@ export default defineComponent({
   components: {
     ButtonBlock,
     ButtonOutline,
+    ButtonTransparent,
     IconBasics,
     InputMultilineText,
     InputText,
