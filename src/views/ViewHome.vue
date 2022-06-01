@@ -158,6 +158,33 @@
     <button-transparent buttonType="error"> Button </button-transparent>
     <button-transparent buttonType="warning"> Button </button-transparent>
   </div>
+  <h3 class="mb-4 text-xl">With Icon</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonType="primary" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="secondary" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="information" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="attention" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="success" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="destructive" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="error" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent buttonType="warning" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
@@ -180,7 +207,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { mdiGithub } from '@mdi/js'
+import { mdiArrowRight, mdiGithub } from '@mdi/js'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
 import ButtonOutline from '@/components/button/ButtonOutline.vue'
 import ButtonTransparent from '@/components/button/ButtonTransparent.vue'
@@ -200,6 +227,7 @@ export default defineComponent({
   },
   data: () => ({
     icon: {
+      mdiArrowRight,
       mdiGithub,
     },
     inputText: '',
