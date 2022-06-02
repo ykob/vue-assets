@@ -99,12 +99,12 @@ export default defineComponent({
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
         switch (buttonSize) {
           case 's':
-            return ['h-5']
+            return ['h-6', 'text-sm']
           case 'm':
           default:
-            return ['h-7']
+            return ['h-7', 'text-base']
           case 'l':
-            return ['h-10']
+            return ['h-8', 'text-lg']
         }
       }
 

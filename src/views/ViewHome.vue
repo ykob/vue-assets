@@ -185,6 +185,21 @@
       Button
     </button-transparent>
   </div>
+  <h3 class="mb-4 text-xl">Sizes</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonSize="s"> Button S </button-transparent>
+    <button-transparent buttonSize="s" buttonType="secondary">
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m"> Button M </button-transparent>
+    <button-transparent buttonSize="m" buttonType="secondary">
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l"> Button L </button-transparent>
+    <button-transparent buttonSize="l" buttonType="secondary">
+      Button L
+    </button-transparent>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
