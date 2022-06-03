@@ -187,16 +187,34 @@
   </div>
   <h3 class="mb-4 text-xl">Sizes</h3>
   <div class="flex gap-4 mb-4">
-    <button-transparent buttonSize="s"> Button S </button-transparent>
-    <button-transparent buttonSize="s" buttonType="secondary">
+    <button-transparent buttonSize="s" :icon="icon.mdiArrowRight">
       Button S
     </button-transparent>
-    <button-transparent buttonSize="m"> Button M </button-transparent>
-    <button-transparent buttonSize="m" buttonType="secondary">
+    <button-transparent
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiArrowRight"
+    >
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m" :icon="icon.mdiArrowRight">
       Button M
     </button-transparent>
-    <button-transparent buttonSize="l"> Button L </button-transparent>
-    <button-transparent buttonSize="l" buttonType="secondary">
+    <button-transparent
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiArrowRight"
+    >
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l" :icon="icon.mdiArrowRight">
+      Button L
+    </button-transparent>
+    <button-transparent
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiArrowRight"
+    >
       Button L
     </button-transparent>
   </div>

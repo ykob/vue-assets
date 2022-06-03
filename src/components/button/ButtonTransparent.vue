@@ -1,6 +1,6 @@
 <template>
   <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
-    <icon-basics v-if="icon !== undefined" :d="icon" size="s" />
+    <icon-basics v-if="icon !== undefined" :d="icon" :size="iconSize" />
     <slot></slot>
   </button-basics>
 </template>
@@ -117,6 +117,17 @@ export default defineComponent({
         'transition-colors',
         'hover:text-neutral-50',
       ]
+    },
+    iconSize(): string {
+      switch (this.buttonSize) {
+        case 's':
+          return 'xs'
+        case 'm':
+        default:
+          return 's'
+        case 'l':
+          return 'm'
+      }
     },
   },
 })
