@@ -28,6 +28,10 @@ export default defineComponent({
       type: String as PropType<Semantics>,
       default: 'primary',
     },
+    circle: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: String || undefined,
       default: undefined,
@@ -99,21 +103,32 @@ export default defineComponent({
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
         switch (buttonSize) {
           case 's':
-            return ['h-6', 'text-sm']
+            if (this.circle) {
+              return ['h-6', 'text-sm', 'w-6']
+            } else {
+              return ['h-6', 'text-sm']
+            }
           case 'm':
           default:
-            return ['h-7', 'text-base']
+            if (this.circle) {
+              return ['h-8', 'text-base', 'w-8']
+            } else {
+              return ['h-7', 'text-base']
+            }
           case 'l':
-            return ['h-8', 'text-lg']
+            if (this.circle) {
+              return ['h-10', 'text-lg', 'w-10']
+            } else {
+              return ['h-8', 'text-lg']
+            }
         }
       }
 
       return [
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
+        ...(this.circle ? ['rounded-full'] : ['px-2', 'rounded']),
         'gap-1',
-        'px-2',
-        'rounded',
         'transition-colors',
         'hover:text-neutral-50',
       ]
