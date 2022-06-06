@@ -127,12 +127,12 @@ export default defineComponent({
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
         switch (buttonSize) {
           case 's':
-            return [this.circle ? 'w-7' : 'w-full', 'h-7', 'text-sm']
+            return ['h-7', 'text-sm', this.circle ? 'w-7' : 'w-full']
           case 'm':
           default:
-            return [this.circle ? 'w-10' : 'w-full', 'h-10', 'text-base']
+            return ['h-10', 'text-base', this.circle ? 'w-10' : 'w-full']
           case 'l':
-            return [this.circle ? 'w-14' : 'w-full', 'h-14', 'text-lg']
+            return ['h-14', 'text-lg', this.circle ? 'w-14' : 'w-full']
         }
       }
 
