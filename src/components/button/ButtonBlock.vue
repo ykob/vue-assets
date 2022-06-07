@@ -112,6 +112,7 @@ export default defineComponent({
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
         ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
+        'font-medium',
         'gap-2',
         'text-neutral-50',
         'transition-colors',

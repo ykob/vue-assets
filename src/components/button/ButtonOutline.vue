@@ -143,6 +143,7 @@ export default defineComponent({
         'bg-neutral-50',
         'border-2',
         'border-solid',
+        'font-medium',
         'gap-2',
         'transition-colors',
         'hover:text-neutral-50',

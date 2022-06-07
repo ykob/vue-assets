@@ -128,6 +128,7 @@ export default defineComponent({
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
         ...(this.circle ? ['rounded-full'] : ['px-2', 'rounded']),
+        'font-medium',
         'gap-1',
         'transition-colors',
         'hover:text-neutral-50',
