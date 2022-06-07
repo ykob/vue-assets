@@ -1,6 +1,6 @@
 <template>
   <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
-    <icon-basics v-if="icon !== undefined" :d="icon" />
+    <icon-basics v-if="icon !== undefined" :d="icon" :size="buttonSize" />
     <slot></slot>
   </button-basics>
 </template>
