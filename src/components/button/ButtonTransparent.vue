@@ -104,20 +104,20 @@ export default defineComponent({
         switch (buttonSize) {
           case 's':
             if (this.circle) {
-              return ['h-6', 'text-sm', 'w-6']
+              return ['h-7', 'text-sm', 'w-7']
             } else {
               return ['h-6', 'text-sm']
             }
           case 'm':
           default:
             if (this.circle) {
-              return ['h-8', 'text-base', 'w-8']
+              return ['h-9', 'text-base', 'w-9']
             } else {
               return ['h-7', 'text-base']
             }
           case 'l':
             if (this.circle) {
-              return ['h-10', 'text-lg', 'w-10']
+              return ['h-11', 'text-lg', 'w-11']
             } else {
               return ['h-8', 'text-lg']
             }
@@ -128,6 +128,7 @@ export default defineComponent({
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
         ...(this.circle ? ['rounded-full'] : ['px-2', 'rounded']),
+        'font-medium',
         'gap-1',
         'transition-colors',
         'hover:text-neutral-50',

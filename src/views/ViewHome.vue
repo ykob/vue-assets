@@ -39,16 +39,22 @@
   </div>
   <h3 class="mb-4 text-xl">Sizes</h3>
   <div class="flex gap-4 mb-4">
-    <button-block buttonSize="s"> Button S </button-block>
-    <button-block buttonSize="s" buttonType="secondary">
+    <button-block buttonSize="s" :icon="icon.mdiGithub">
       Button S
     </button-block>
-    <button-block buttonSize="m"> Button M </button-block>
-    <button-block buttonSize="m" buttonType="secondary">
+    <button-block buttonSize="s" buttonType="secondary" :icon="icon.mdiGithub">
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub">
       Button M
     </button-block>
-    <button-block buttonSize="l"> Button L </button-block>
-    <button-block buttonSize="l" buttonType="secondary">
+    <button-block buttonSize="m" buttonType="secondary" :icon="icon.mdiGithub">
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub">
+      Button L
+    </button-block>
+    <button-block buttonSize="l" buttonType="secondary" :icon="icon.mdiGithub">
       Button L
     </button-block>
   </div>
@@ -113,16 +119,34 @@
   </div>
   <h3 class="mb-4 text-xl">Sizes</h3>
   <div class="flex gap-4 mb-4">
-    <button-outline buttonSize="s"> Button S </button-outline>
-    <button-outline buttonSize="s" buttonType="secondary">
+    <button-outline buttonSize="s" :icon="icon.mdiGithub">
       Button S
     </button-outline>
-    <button-outline buttonSize="m"> Button M </button-outline>
-    <button-outline buttonSize="m" buttonType="secondary">
+    <button-outline
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+    >
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub">
       Button M
     </button-outline>
-    <button-outline buttonSize="l"> Button L </button-outline>
-    <button-outline buttonSize="l" buttonType="secondary">
+    <button-outline
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+    >
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub">
+      Button L
+    </button-outline>
+    <button-outline
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+    >
       Button L
     </button-outline>
   </div>

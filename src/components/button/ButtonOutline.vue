@@ -1,6 +1,6 @@
 <template>
   <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
-    <icon-basics v-if="icon !== undefined" :d="icon" />
+    <icon-basics v-if="icon !== undefined" :d="icon" :size="buttonSize" />
     <slot></slot>
   </button-basics>
 </template>
@@ -127,12 +127,12 @@ export default defineComponent({
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
         switch (buttonSize) {
           case 's':
-            return [this.circle ? 'w-7' : 'w-full', 'h-7']
+            return ['h-7', 'text-sm', this.circle ? 'w-7' : 'w-full']
           case 'm':
           default:
-            return [this.circle ? 'w-10' : 'w-full', 'h-10']
+            return ['h-10', 'text-base', this.circle ? 'w-10' : 'w-full']
           case 'l':
-            return [this.circle ? 'w-14' : 'w-full', 'h-14']
+            return ['h-14', 'text-lg', this.circle ? 'w-14' : 'w-full']
         }
       }
 
@@ -143,6 +143,7 @@ export default defineComponent({
         'bg-neutral-50',
         'border-2',
         'border-solid',
+        'font-medium',
         'gap-2',
         'transition-colors',
         'hover:text-neutral-50',
