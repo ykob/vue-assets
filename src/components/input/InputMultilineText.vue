@@ -1,7 +1,6 @@
 <template>
   <textarea
     v-bind="$attrs"
-    class="placeholder-neutral-400 rounded"
     :class="classnames"
     @change="changeHandler"
     @input="inputHandler"
@@ -19,11 +18,15 @@ export default defineComponent({
     },
   },
   computed: {
-    classnames(): { [key: string]: boolean } {
-      return {
-        'border-neutral-500': this.error === false,
-        'bg-neutral-50': true,
-      }
+    classnames(): string[] {
+      return [
+        'border',
+        'border-neutral-500',
+        'bg-neutral-50',
+        'p-4',
+        'placeholder-neutral-400',
+        'rounded',
+      ]
     },
   },
   methods: {
@@ -40,15 +43,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-textarea {
-  appearance: none;
-  box-sizing: border-box;
-  display: block;
-  padding: 16px;
-  line-height: 1.5;
-  border-style: solid;
-  border-width: 1px;
-}
-</style>
