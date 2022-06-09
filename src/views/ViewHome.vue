@@ -273,6 +273,12 @@
       placeholder="placeholder"
     />
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">CheckBox</h2>
+  <div class="flex gap-4 mb-4">
+    <checkbox-single v-model="check" value="check1">Checkbox1</checkbox-single>
+    <checkbox-single v-model="check" value="check2">Checkbox2</checkbox-single>
+    <checkbox-single v-model="check" value="check3">Checkbox3</checkbox-single>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Icons</h2>
   <div class="flex gap-4 mb-4">
     <icon-basics :d="icon.mdiGithub" size="xs" />
@@ -289,6 +295,7 @@ import { mdiArrowRight, mdiGithub } from '@mdi/js'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
 import ButtonOutline from '@/components/button/ButtonOutline.vue'
 import ButtonTransparent from '@/components/button/ButtonTransparent.vue'
+import CheckboxSingle from '@/components/checkbox/CheckboxSingle.vue'
 import IconBasics from '@/components/icon/IconBasics.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
@@ -299,6 +306,7 @@ export default defineComponent({
     ButtonBlock,
     ButtonOutline,
     ButtonTransparent,
+    CheckboxSingle,
     IconBasics,
     InputMultilineText,
     InputText,
@@ -308,6 +316,7 @@ export default defineComponent({
       mdiArrowRight,
       mdiGithub,
     },
+    check: [],
     inputText: '',
     InputMultilineText: '',
   }),

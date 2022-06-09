@@ -6,7 +6,6 @@
       :value="value"
       :checked="checked"
       :disabled="disabled"
-      @change="$emit('change', $event)"
     />
     <div></div>
     <div>
