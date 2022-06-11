@@ -3,8 +3,8 @@
     v-bind="$attrs"
     all
     :checked="checkedAll"
-    :disabled="disabled"
     :desc="desc"
+    :disabled="disabled"
     @change="onChange"
   >
     <slot></slot>
