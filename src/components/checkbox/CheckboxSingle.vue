@@ -21,21 +21,21 @@ export default defineComponent({
     CheckboxBasics,
   },
   props: {
-    value: {
-      type: String,
-      default: '',
-    },
-    modelValue: {
-      type: Array as PropType<string[]>,
-      default: () => [],
+    desc: {
+      type: Boolean,
+      default: false,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
-    desc: {
-      type: Boolean,
-      default: false,
+    modelValue: {
+      type: Array as PropType<string[]>,
+      default: () => [],
+    },
+    value: {
+      type: String,
+      default: '',
     },
   },
   methods: {
