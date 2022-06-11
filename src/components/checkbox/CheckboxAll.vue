@@ -1,6 +1,7 @@
 <template>
   <checkbox-basics
     v-bind="$attrs"
+    all
     :checked="checkedAll"
     :disabled="disabled"
     :desc="desc"

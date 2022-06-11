@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { mdiCheck } from '@mdi/js'
+import { mdiCheck, mdiCheckAll } from '@mdi/js'
 import IconBasics from '@/components/icon/IconBasics.vue'
 
 export default defineComponent({
@@ -28,6 +28,10 @@ export default defineComponent({
     IconBasics,
   },
   props: {
+    all: {
+      type: Boolean,
+      default: false,
+    },
     value: {
       type: String,
       default: '',
@@ -45,9 +49,6 @@ export default defineComponent({
       default: false,
     },
   },
-  data: () => ({
-    icon: mdiCheck,
-  }),
   computed: {
     classnames(): string[] {
       return [
@@ -79,6 +80,9 @@ export default defineComponent({
         'text-neutral-50',
         'w-5',
       ]
+    },
+    icon(): string {
+      return this.all ? mdiCheckAll : mdiCheck
     },
   },
 })
