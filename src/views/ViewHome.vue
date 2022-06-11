@@ -274,6 +274,7 @@
     />
   </div>
   <h2 class="mt-12 mb-4 text-3xl">CheckBox</h2>
+  <div class="mb-4">check: {{ check }}</div>
   <div class="flex gap-4 mb-4">
     <checkbox-single v-model="check" value="check1">Checkbox1</checkbox-single>
     <checkbox-single v-model="check" value="check2">Checkbox2</checkbox-single>
