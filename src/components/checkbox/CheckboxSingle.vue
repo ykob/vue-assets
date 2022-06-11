@@ -2,9 +2,9 @@
   <checkbox-basics
     v-bind="$attrs"
     :value="value"
-    :checked="modelValue.includes(value)"
-    :disabled="disabled"
+    :checked="checked"
     :desc="desc"
+    :disabled="disabled"
     @change="onChange"
   >
     <slot></slot>
@@ -30,12 +30,19 @@ export default defineComponent({
       default: false,
     },
     modelValue: {
-      type: Array as PropType<string[]>,
+      type: Array as PropType<string[] | boolean>,
       default: () => [],
     },
     value: {
       type: String,
       default: '',
+    },
+  },
+  computed: {
+    checked(): boolean {
+      return Array.isArray(this.modelValue)
+        ? this.modelValue.includes(this.value)
+        : this.modelValue
     },
   },
   methods: {
@@ -44,17 +51,21 @@ export default defineComponent({
         e.currentTarget !== null &&
         e.currentTarget instanceof HTMLInputElement
       ) {
-        const { value } = e.currentTarget
-        let currentValue = [...this.modelValue]
+        if (Array.isArray(this.modelValue)) {
+          const { value } = e.currentTarget
+          let currentValue = [...this.modelValue]
 
-        if (e.currentTarget.checked) {
-          currentValue.push(value)
+          if (e.currentTarget.checked) {
+            currentValue.push(value)
+          } else {
+            currentValue = currentValue.filter((v) => {
+              return v !== value
+            })
+          }
+          this.$emit('update:modelValue', currentValue)
         } else {
-          currentValue = currentValue.filter((v) => {
-            return v !== value
-          })
+          this.$emit('update:modelValue', !this.modelValue)
         }
-        this.$emit('update:modelValue', currentValue)
       }
     },
   },

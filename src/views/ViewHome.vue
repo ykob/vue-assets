@@ -274,16 +274,28 @@
     />
   </div>
   <h2 class="mt-12 mb-4 text-3xl">CheckBox</h2>
-  <div class="mb-4">check: {{ check }}</div>
+  <h3 class="mb-4 text-xl">Array</h3>
+  <div class="mb-4">checkArray: {{ checkArray }}</div>
   <div class="flex gap-4 mb-4">
-    <checkbox-single v-model="check" value="check1">Checkbox1</checkbox-single>
-    <checkbox-single v-model="check" value="check2">Checkbox2</checkbox-single>
-    <checkbox-single v-model="check" value="check3">Checkbox3</checkbox-single>
-  </div>
-  <div class="flex gap-4 mb-4">
-    <checkbox-all v-model="check" :value="['check1', 'check2', 'check3']">
+    <checkbox-all v-model="checkArray" :value="['check1', 'check2', 'check3']">
       Check All
     </checkbox-all>
+    <checkbox-single v-model="checkArray" value="check1">
+      Checkbox1
+    </checkbox-single>
+    <checkbox-single v-model="checkArray" value="check2">
+      Checkbox2
+    </checkbox-single>
+    <checkbox-single v-model="checkArray" value="check3">
+      Checkbox3
+    </checkbox-single>
+  </div>
+  <h3 class="mb-4 text-xl">Boolean</h3>
+  <div class="mb-4">checkBool: {{ checkBool }}</div>
+  <div class="flex gap-4 mb-4">
+    <checkbox-single v-model="checkBool" value="check">
+      Checkbox has boolean
+    </checkbox-single>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Icons</h2>
   <div class="flex gap-4 mb-4">
@@ -324,7 +336,8 @@ export default defineComponent({
       mdiArrowRight,
       mdiGithub,
     },
-    check: [],
+    checkArray: [],
+    checkBool: false,
     inputText: '',
     InputMultilineText: '',
   }),
