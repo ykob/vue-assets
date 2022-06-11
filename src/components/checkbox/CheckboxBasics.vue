@@ -50,11 +50,23 @@ export default defineComponent({
   }),
   computed: {
     classnames(): string[] {
-      return ['cursor-pointer', 'gap-2', 'items-center', 'flex']
+      return [
+        'block',
+        'cursor-pointer',
+        'flex',
+        'gap-2',
+        'items-center',
+        'leading-4',
+        'p-1',
+        'rounded',
+        'transition-colors',
+        'active:bg-information-200',
+        'hover:bg-information-100',
+      ]
     },
     classnamesMark(): string[] {
       const classnamesChecked = this.checked
-        ? ['bg-primary-500', 'border-primary-500']
+        ? ['bg-information-500', 'border-information-500']
         : ['bg-neutral-50', 'border-neutral-500']
       return [
         ...classnamesChecked,
