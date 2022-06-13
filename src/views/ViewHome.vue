@@ -297,6 +297,12 @@
       Checkbox has boolean
     </checkbox-single>
   </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <checkbox-single disabled value="check">
+      Checkbox has boolean
+    </checkbox-single>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Icons</h2>
   <div class="flex gap-4 mb-4">
     <icon-basics :d="icon.mdiGithub" size="xs" />
