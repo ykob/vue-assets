@@ -30,7 +30,7 @@ export default defineComponent({
       default: false,
     },
     modelValue: {
-      type: Array as PropType<string[] | boolean>,
+      type: [Array, Boolean] as PropType<string[] | boolean>,
       default: () => [],
     },
     value: {
