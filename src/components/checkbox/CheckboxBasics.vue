@@ -51,7 +51,18 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
+      let classnamesEachStatus: string[] = []
+
+      if (this.disabled) {
+        classnamesEachStatus = ['pointer-events-none', 'text-neutral-300']
+      } else {
+        classnamesEachStatus = [
+          'active:bg-information-200',
+          'hover:bg-information-100',
+        ]
+      }
       return [
+        ...classnamesEachStatus,
         'block',
         'cursor-pointer',
         'flex',
@@ -61,16 +72,20 @@ export default defineComponent({
         'p-1',
         'rounded',
         'transition-colors',
-        'active:bg-information-200',
-        'hover:bg-information-100',
       ]
     },
     classnamesMark(): string[] {
-      const classnamesChecked = this.checked
-        ? ['bg-information-500', 'border-information-500']
-        : ['bg-neutral-50', 'border-neutral-500']
+      let classnamesEachStatus: string[] = []
+
+      if (this.checked) {
+        classnamesEachStatus = ['bg-information-500', 'border-information-500']
+      } else if (this.disabled) {
+        classnamesEachStatus = ['bg-neutral-100', 'border-neutral-300']
+      } else {
+        classnamesEachStatus = ['bg-neutral-50', 'border-neutral-500']
+      }
       return [
-        ...classnamesChecked,
+        ...classnamesEachStatus,
         'border',
         'flex',
         'h-5',
