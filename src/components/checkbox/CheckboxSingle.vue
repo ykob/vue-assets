@@ -47,6 +47,7 @@ export default defineComponent({
   },
   methods: {
     onChange(e: Event) {
+      if (this.disabled) return
       if (
         e.currentTarget !== null &&
         e.currentTarget instanceof HTMLInputElement
