@@ -1,5 +1,9 @@
 <template>
-  <component class="button" :is="tag" @click="$emit('click', $event)">
+  <component
+    class="flex items-center justify-center"
+    :is="tag"
+    @click="$emit('click', $event)"
+  >
     <slot></slot>
   </component>
 </template>
@@ -17,13 +21,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-.button {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-}
-</style>
