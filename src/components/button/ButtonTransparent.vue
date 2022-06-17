@@ -1,5 +1,5 @@
 <template>
-  <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
+  <button-basics :class="classnames" :tag="tag" @click="$emit('accepted')">
     <icon-basics v-if="icon !== undefined" :d="icon" :size="iconSize" />
     <slot></slot>
   </button-basics>
@@ -15,6 +15,7 @@ type ButtonSize = 's' | 'm' | 'l'
 
 export default defineComponent({
   name: 'ButtonTransparent',
+  emits: ['accepted'],
   components: {
     ButtonBasics,
     IconBasics,

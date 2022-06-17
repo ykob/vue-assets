@@ -2,7 +2,7 @@
   <component
     class="flex items-center justify-center"
     :is="tag"
-    @click="$emit('click', $event)"
+    @click="$emit('accepted')"
   >
     <slot></slot>
   </component>
@@ -13,6 +13,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'ButtonBasics',
+  emits: ['accepted'],
   props: {
     tag: {
       type: String,
