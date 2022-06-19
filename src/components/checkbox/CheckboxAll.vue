@@ -16,6 +16,7 @@ import { defineComponent, PropType } from 'vue'
 import CheckboxBasics from '@/components/checkbox/CheckboxBasics.vue'
 
 export default defineComponent({
+  name: 'CheckboxAll',
   components: {
     CheckboxBasics,
   },

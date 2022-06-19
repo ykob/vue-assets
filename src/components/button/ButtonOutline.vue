@@ -1,5 +1,5 @@
 <template>
-  <button-basics :class="classnames" :tag="tag" @click="$emit('click', $event)">
+  <button-basics :class="classnames" :tag="tag" @click="$emit('accepted')">
     <icon-basics v-if="icon !== undefined" :d="icon" :size="buttonSize" />
     <slot></slot>
   </button-basics>
@@ -14,7 +14,8 @@ import { Semantics } from '@/types/'
 type ButtonSize = 's' | 'm' | 'l'
 
 export default defineComponent({
-  name: 'ButtonBlock',
+  name: 'ButtonOutline',
+  emits: ['accepted'],
   components: {
     ButtonBasics,
     IconBasics,
