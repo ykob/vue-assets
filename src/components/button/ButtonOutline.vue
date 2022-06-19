@@ -14,7 +14,7 @@ import { Semantics } from '@/types/'
 type ButtonSize = 's' | 'm' | 'l'
 
 export default defineComponent({
-  name: 'ButtonBlock',
+  name: 'ButtonOutline',
   emits: ['accepted'],
   components: {
     ButtonBasics,
