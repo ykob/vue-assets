@@ -39,6 +39,19 @@
       Checkbox has boolean
     </checkbox-single>
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Radio</h2>
+  <div class="mb-4">radioValue: {{ radioValue }}</div>
+  <div class="flex gap-4 mb-4">
+    <radio-button v-model="radioValue" value="radio1">
+      RadioButton1
+    </radio-button>
+    <radio-button v-model="radioValue" value="radio2">
+      RadioButton2
+    </radio-button>
+    <radio-button v-model="radioValue" value="radio3">
+      RadioButton3
+    </radio-button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -47,6 +60,7 @@ import CheckboxAll from '@/components/checkbox/CheckboxAll.vue'
 import CheckboxSingle from '@/components/checkbox/CheckboxSingle.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
+import RadioButton from '@/components/radioButton/RadioButton.vue'
 
 export default defineComponent({
   name: 'ViewFormElements',
@@ -55,12 +69,14 @@ export default defineComponent({
     CheckboxSingle,
     InputMultilineText,
     InputText,
+    RadioButton,
   },
   data: () => ({
     checkArray: [],
     checkBool: false,
     inputText: '',
     InputMultilineText: '',
+    radioValue: '',
   }),
 })
 </script>
