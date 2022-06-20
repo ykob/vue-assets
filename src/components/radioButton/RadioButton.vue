@@ -9,7 +9,9 @@
       :disabled="disabled"
       @change="onChange"
     />
-    <div :class="classnamesMark"></div>
+    <div :class="classnamesMarkContainer">
+      <div :class="classnamesMark"></div>
+    </div>
     <div>
       <slot></slot>
     </div>
@@ -71,8 +73,24 @@ export default defineComponent({
       let classnamesEachStatus: string[] = []
 
       if (this.checked) {
-        classnamesEachStatus = ['bg-information-500', 'border-information-500']
-      } else if (this.disabled) {
+        classnamesEachStatus = ['block']
+      } else {
+        classnamesEachStatus = ['hidden']
+      }
+      return [
+        ...classnamesEachStatus,
+        'bg-information-500',
+        'border-information-500',
+        'border',
+        'h-3',
+        'rounded-full',
+        'w-3',
+      ]
+    },
+    classnamesMarkContainer(): string[] {
+      let classnamesEachStatus: string[] = []
+
+      if (this.disabled) {
         classnamesEachStatus = ['bg-neutral-100', 'border-neutral-300']
       } else {
         classnamesEachStatus = ['bg-neutral-50', 'border-neutral-500']
@@ -85,7 +103,6 @@ export default defineComponent({
         'items-center',
         'justify-center',
         'rounded-full',
-        'text-neutral-50',
         'w-5',
       ]
     },
