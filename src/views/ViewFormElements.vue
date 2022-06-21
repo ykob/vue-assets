@@ -1,4 +1,5 @@
 <template>
+  <h1 class="mb-8 text-5xl">Vue Assets / Form Elements</h1>
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex flex-col gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />

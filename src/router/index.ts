@@ -8,6 +8,12 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "home" */ '../views/ViewHome.vue'),
   },
   {
+    path: '/buttons/',
+    name: 'buttons',
+    component: () =>
+      import(/* webpackChunkName: "buttons" */ '../views/ViewButtons.vue'),
+  },
+  {
     path: '/form-elements/',
     name: 'formElements',
     component: () =>
