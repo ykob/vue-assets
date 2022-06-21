@@ -263,54 +263,6 @@
       <icon-basics :d="icon.mdiGithub" size="l" />
     </button-transparent>
   </div>
-  <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
-  <div class="flex flex-col gap-4 mb-4">
-    <input-text v-model="inputText" placeholder="placeholder" />
-  </div>
-  <div class="flex flex-col gap-4">
-    <input-multiline-text
-      v-model="InputMultilineText"
-      placeholder="placeholder"
-    />
-  </div>
-  <h2 class="mt-12 mb-4 text-3xl">CheckBox</h2>
-  <h3 class="mb-4 text-xl">Array</h3>
-  <div class="mb-4">checkArray: {{ checkArray }}</div>
-  <div class="flex gap-4 mb-4">
-    <checkbox-all v-model="checkArray" :value="['check1', 'check2', 'check3']">
-      Check All
-    </checkbox-all>
-    <checkbox-single v-model="checkArray" value="check1">
-      Checkbox1
-    </checkbox-single>
-    <checkbox-single v-model="checkArray" value="check2">
-      Checkbox2
-    </checkbox-single>
-    <checkbox-single v-model="checkArray" value="check3">
-      Checkbox3
-    </checkbox-single>
-  </div>
-  <h3 class="mb-4 text-xl">Boolean</h3>
-  <div class="mb-4">checkBool: {{ checkBool }}</div>
-  <div class="flex gap-4 mb-4">
-    <checkbox-single v-model="checkBool" value="check">
-      Checkbox has boolean
-    </checkbox-single>
-  </div>
-  <h3 class="mb-4 text-xl">Disabled</h3>
-  <div class="flex gap-4 mb-4">
-    <checkbox-single disabled value="check">
-      Checkbox has boolean
-    </checkbox-single>
-  </div>
-  <h2 class="mt-12 mb-4 text-3xl">Icons</h2>
-  <div class="flex gap-4 mb-4">
-    <icon-basics :d="icon.mdiGithub" size="xs" />
-    <icon-basics :d="icon.mdiGithub" size="s" />
-    <icon-basics :d="icon.mdiGithub" size="m" />
-    <icon-basics :d="icon.mdiGithub" size="l" />
-    <icon-basics :d="icon.mdiGithub" size="xl" />
-  </div>
 </template>
 
 <script lang="ts">
@@ -319,11 +271,7 @@ import { mdiArrowRight, mdiGithub } from '@mdi/js'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
 import ButtonOutline from '@/components/button/ButtonOutline.vue'
 import ButtonTransparent from '@/components/button/ButtonTransparent.vue'
-import CheckboxAll from '@/components/checkbox/CheckboxAll.vue'
-import CheckboxSingle from '@/components/checkbox/CheckboxSingle.vue'
 import IconBasics from '@/components/icon/IconBasics.vue'
-import InputMultilineText from '@/components/input/InputMultilineText.vue'
-import InputText from '@/components/input/InputText.vue'
 
 export default defineComponent({
   name: 'ViewHome',
@@ -331,21 +279,13 @@ export default defineComponent({
     ButtonBlock,
     ButtonOutline,
     ButtonTransparent,
-    CheckboxAll,
-    CheckboxSingle,
     IconBasics,
-    InputMultilineText,
-    InputText,
   },
   data: () => ({
     icon: {
       mdiArrowRight,
       mdiGithub,
     },
-    checkArray: [],
-    checkBool: false,
-    inputText: '',
-    InputMultilineText: '',
   }),
 })
 </script>

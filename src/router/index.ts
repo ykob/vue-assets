@@ -7,6 +7,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "home" */ '../views/ViewHome.vue'),
   },
+  {
+    path: '/form-elements/',
+    name: 'formElements',
+    component: () =>
+      import(
+        /* webpackChunkName: "formElements" */ '../views/ViewFormElements.vue'
+      ),
+  },
 ]
 
 const router = createRouter({
