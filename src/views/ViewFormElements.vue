@@ -61,7 +61,7 @@ import CheckboxAll from '@/components/checkbox/CheckboxAll.vue'
 import CheckboxSingle from '@/components/checkbox/CheckboxSingle.vue'
 import InputMultilineText from '@/components/input/InputMultilineText.vue'
 import InputText from '@/components/input/InputText.vue'
-import RadioButton from '@/components/radioButton/RadioButton.vue'
+import RadioButton from '@/components/radio-button/RadioButton.vue'
 
 export default defineComponent({
   name: 'ViewFormElements',
