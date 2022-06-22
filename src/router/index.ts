@@ -21,6 +21,12 @@ const routes: Array<RouteRecordRaw> = [
         /* webpackChunkName: "formElements" */ '../views/ViewFormElements.vue'
       ),
   },
+  {
+    path: '/icons/',
+    name: 'icons',
+    component: () =>
+      import(/* webpackChunkName: "icons" */ '../views/ViewIcons.vue'),
+  },
 ]
 
 const router = createRouter({

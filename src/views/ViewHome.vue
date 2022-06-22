@@ -15,6 +15,13 @@
     >
       Form Elements
     </button-transparent>
+    <button-transparent
+      :icon="icon.mdiArrowRight"
+      tag="router-link"
+      to="/icons"
+    >
+      Icons
+    </button-transparent>
   </div>
 </template>
 
