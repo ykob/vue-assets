@@ -1,6 +1,7 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    class="block fill-current"
     :height="px"
     viewBox="0 0 24 24"
     :width="px"
@@ -43,10 +44,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-svg {
-  display: block;
-  fill: currentColor;
-}
-</style>
