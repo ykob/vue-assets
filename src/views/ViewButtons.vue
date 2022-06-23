@@ -62,22 +62,22 @@
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-block buttonSize="s" circle>
-      <icon-basics :d="icon.mdiGithub" size="s" />
+      <icon-svg :d="icon.mdiGithub" size="s" />
     </button-block>
     <button-block buttonSize="s" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="s" />
+      <icon-svg :d="icon.mdiGithub" size="s" />
     </button-block>
     <button-block buttonSize="m" circle>
-      <icon-basics :d="icon.mdiGithub" size="m" />
+      <icon-svg :d="icon.mdiGithub" size="m" />
     </button-block>
     <button-block buttonSize="m" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="m" />
+      <icon-svg :d="icon.mdiGithub" size="m" />
     </button-block>
     <button-block buttonSize="l" circle>
-      <icon-basics :d="icon.mdiGithub" size="l" />
+      <icon-svg :d="icon.mdiGithub" size="l" />
     </button-block>
     <button-block buttonSize="l" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="l" />
+      <icon-svg :d="icon.mdiGithub" size="l" />
     </button-block>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Button Outline</h2>
@@ -154,22 +154,22 @@
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-outline buttonSize="s" circle>
-      <icon-basics :d="icon.mdiGithub" size="s" />
+      <icon-svg :d="icon.mdiGithub" size="s" />
     </button-outline>
     <button-outline buttonSize="s" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="s" />
+      <icon-svg :d="icon.mdiGithub" size="s" />
     </button-outline>
     <button-outline buttonSize="m" circle>
-      <icon-basics :d="icon.mdiGithub" size="m" />
+      <icon-svg :d="icon.mdiGithub" size="m" />
     </button-outline>
     <button-outline buttonSize="m" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="m" />
+      <icon-svg :d="icon.mdiGithub" size="m" />
     </button-outline>
     <button-outline buttonSize="l" circle>
-      <icon-basics :d="icon.mdiGithub" size="l" />
+      <icon-svg :d="icon.mdiGithub" size="l" />
     </button-outline>
     <button-outline buttonSize="l" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="l" />
+      <icon-svg :d="icon.mdiGithub" size="l" />
     </button-outline>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Button Transparent</h2>
@@ -246,22 +246,22 @@
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-transparent buttonSize="s" circle>
-      <icon-basics :d="icon.mdiGithub" size="s" />
+      <icon-svg :d="icon.mdiGithub" size="s" />
     </button-transparent>
     <button-transparent buttonSize="s" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="s" />
+      <icon-svg :d="icon.mdiGithub" size="s" />
     </button-transparent>
     <button-transparent buttonSize="m" circle>
-      <icon-basics :d="icon.mdiGithub" size="m" />
+      <icon-svg :d="icon.mdiGithub" size="m" />
     </button-transparent>
     <button-transparent buttonSize="m" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="m" />
+      <icon-svg :d="icon.mdiGithub" size="m" />
     </button-transparent>
     <button-transparent buttonSize="l" circle>
-      <icon-basics :d="icon.mdiGithub" size="l" />
+      <icon-svg :d="icon.mdiGithub" size="l" />
     </button-transparent>
     <button-transparent buttonSize="l" buttonType="secondary" circle>
-      <icon-basics :d="icon.mdiGithub" size="l" />
+      <icon-svg :d="icon.mdiGithub" size="l" />
     </button-transparent>
   </div>
 </template>
@@ -272,7 +272,7 @@ import { mdiArrowRight, mdiGithub } from '@mdi/js'
 import ButtonBlock from '@/components/button/ButtonBlock.vue'
 import ButtonOutline from '@/components/button/ButtonOutline.vue'
 import ButtonTransparent from '@/components/button/ButtonTransparent.vue'
-import IconBasics from '@/components/icon/IconBasics.vue'
+import IconSvg from '@/components/icon/IconSvg.vue'
 
 export default defineComponent({
   name: 'ViewButtons',
@@ -280,7 +280,7 @@ export default defineComponent({
     ButtonBlock,
     ButtonOutline,
     ButtonTransparent,
-    IconBasics,
+    IconSvg,
   },
   data: () => ({
     icon: {
