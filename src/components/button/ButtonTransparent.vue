@@ -1,6 +1,6 @@
 <template>
   <button-basics :class="classnames" :tag="tag" @click="$emit('accepted')">
-    <icon-basics v-if="icon !== undefined" :d="icon" :size="iconSize" />
+    <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
     <slot></slot>
   </button-basics>
 </template>
@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
-import IconBasics from '@/components/icon/IconBasics.vue'
+import IconSvg from '@/components/icon/IconSvg.vue'
 import { Semantics } from '@/types/'
 
 type ButtonSize = 's' | 'm' | 'l'
@@ -18,7 +18,7 @@ export default defineComponent({
   emits: ['accepted'],
   components: {
     ButtonBasics,
-    IconBasics,
+    IconSvg,
   },
   props: {
     buttonSize: {

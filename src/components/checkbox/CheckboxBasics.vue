@@ -9,7 +9,7 @@
       :disabled="disabled"
     />
     <div :class="classnamesMark">
-      <icon-basics v-show="checked" :d="icon" size="s" />
+      <icon-svg v-show="checked" :d="icon" size="s" />
     </div>
     <div>
       <slot></slot>
@@ -20,12 +20,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { mdiCheck, mdiCheckAll } from '@mdi/js'
-import IconBasics from '@/components/icon/IconBasics.vue'
+import IconSvg from '@/components/icon/IconSvg.vue'
 
 export default defineComponent({
   name: 'CheckboxBasics',
   components: {
-    IconBasics,
+    IconSvg,
   },
   props: {
     all: {
