@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import CheckboxBasics from '@/components/checkbox/CheckboxBasics.vue'
+import CheckboxBasics from '@/components/form-element/CheckboxBasics.vue'
 
 export default defineComponent({
   name: 'CheckboxSingle',

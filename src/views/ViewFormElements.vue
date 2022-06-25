@@ -57,11 +57,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import CheckboxAll from '@/components/checkbox/CheckboxAll.vue'
-import CheckboxSingle from '@/components/checkbox/CheckboxSingle.vue'
-import InputMultilineText from '@/components/input/InputMultilineText.vue'
-import InputText from '@/components/input/InputText.vue'
-import RadioButton from '@/components/radio-button/RadioButton.vue'
+import CheckboxAll from '@/components/form-element/CheckboxAll.vue'
+import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
+import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
+import InputText from '@/components/form-element/InputText.vue'
+import RadioButton from '@/components/form-element/RadioButton.vue'
 
 export default defineComponent({
   name: 'ViewFormElements',
