@@ -53,6 +53,10 @@
       RadioButton3
     </radio-button>
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Toggle Switch</h2>
+  <div>
+    <toggle-switch />
+  </div>
 </template>
 
 <script lang="ts">
@@ -62,6 +66,7 @@ import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
 import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
 import InputText from '@/components/form-element/InputText.vue'
 import RadioButton from '@/components/form-element/RadioButton.vue'
+import ToggleSwitch from '@/components/form-element/ToggleSwitch.vue'
 
 export default defineComponent({
   name: 'ViewFormElements',
@@ -71,6 +76,7 @@ export default defineComponent({
     InputMultilineText,
     InputText,
     RadioButton,
+    ToggleSwitch,
   },
   data: () => ({
     checkArray: [],
