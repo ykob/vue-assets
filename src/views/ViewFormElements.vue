@@ -54,8 +54,13 @@
     </radio-button>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Toggle Switch</h2>
-  <div>
-    <toggle-switch v-model="toggleSwitchValue" />
+  <div class="flex gap-4 mb-4">
+    <toggle-switch v-model="toggleSwitchValue1" />
+    <toggle-switch
+      v-model="toggleSwitchValue2"
+      label-off="False"
+      label-on="True"
+    />
   </div>
 </template>
 
@@ -84,7 +89,8 @@ export default defineComponent({
     inputText: '',
     InputMultilineText: '',
     radioValue: '',
-    toggleSwitchValue: false,
+    toggleSwitchValue1: false,
+    toggleSwitchValue2: false,
   }),
 })
 </script>

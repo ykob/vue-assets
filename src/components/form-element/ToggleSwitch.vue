@@ -10,6 +10,14 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ToggleSwitch',
   props: {
+    labelOff: {
+      type: String,
+      default: 'OFF',
+    },
+    labelOn: {
+      type: String,
+      default: 'ON',
+    },
     modelValue: {
       type: Boolean,
       default: false,
@@ -45,7 +53,7 @@ export default defineComponent({
       ]
     },
     label(): string {
-      return this.modelValue ? 'ON' : 'OFF'
+      return this.modelValue ? this.labelOn : this.labelOff
     },
   },
   methods: {
