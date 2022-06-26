@@ -28,15 +28,19 @@ export default defineComponent({
       ]
     },
     classnamesKnob(): string[] {
+      const classnamesToggle = this.modelValue
+        ? ['bg-primary-500', 'text-neutral-50', 'translate-x-6']
+        : ['bg-neutral-50', 'text-primary-500', 'translate-x-0']
       return [
-        'bg-primary-500',
+        ...classnamesToggle,
+        'drop-shadow',
         'flex',
         'font-bold',
         'h-7',
         'items-center',
         'justify-center',
         'rounded-full',
-        'text-neutral-50',
+        'transition-all',
         'w-16',
       ]
     },
