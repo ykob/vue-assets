@@ -55,7 +55,7 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Toggle Switch</h2>
   <div>
-    <toggle-switch />
+    <toggle-switch v-model="toggleSwitchValue" />
   </div>
 </template>
 
@@ -84,6 +84,7 @@ export default defineComponent({
     inputText: '',
     InputMultilineText: '',
     radioValue: '',
+    toggleSwitchValue: false,
   }),
 })
 </script>
