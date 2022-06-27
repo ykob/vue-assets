@@ -1,5 +1,5 @@
 <template>
-  <button :class="classnamesContainer" @click="onClick">
+  <button :class="classnamesContainer" :disabled="disabled" @click="onClick">
     <span :class="classnamesKnob"> {{ label }} </span>
   </button>
 </template>
@@ -10,6 +10,10 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ToggleSwitch',
   props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     labelOff: {
       type: String,
       default: 'OFF',
@@ -37,7 +41,11 @@ export default defineComponent({
     },
     classnamesKnob(): string[] {
       const classnamesColors =
-        this.modelValue === true
+        this.disabled === true
+          ? this.modelValue === true
+            ? ['bg-neutral-400', 'text-neutral-300']
+            : ['bg-neutral-200', 'text-neutral-400']
+          : this.modelValue === true
           ? ['bg-primary-500', 'text-neutral-50']
           : ['bg-neutral-50', 'text-primary-500']
       return [
@@ -60,6 +68,7 @@ export default defineComponent({
   },
   methods: {
     onClick() {
+      if (this.disabled === true) return
       this.$emit('update:modelValue', !this.modelValue)
     },
   },

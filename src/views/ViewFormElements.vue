@@ -62,6 +62,11 @@
       label-on="True"
     />
   </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <toggle-switch v-model="toggleSwitchValueDisabled1" disabled />
+    <toggle-switch v-model="toggleSwitchValueDisabled2" disabled />
+  </div>
 </template>
 
 <script lang="ts">
@@ -91,6 +96,8 @@ export default defineComponent({
     radioValue: '',
     toggleSwitchValue1: false,
     toggleSwitchValue2: false,
+    toggleSwitchValueDisabled1: false,
+    toggleSwitchValueDisabled2: true,
   }),
 })
 </script>
