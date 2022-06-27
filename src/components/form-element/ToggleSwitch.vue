@@ -36,11 +36,13 @@ export default defineComponent({
       ]
     },
     classnamesKnob(): string[] {
-      const classnamesToggle = this.modelValue
-        ? ['bg-primary-500', 'text-neutral-50', 'translate-x-6']
-        : ['bg-neutral-50', 'text-primary-500', 'translate-x-0']
+      const classnamesColors =
+        this.modelValue === true
+          ? ['bg-primary-500', 'text-neutral-50']
+          : ['bg-neutral-50', 'text-primary-500']
       return [
-        ...classnamesToggle,
+        ...classnamesColors,
+        this.modelValue ? 'translate-x-6' : 'translate-x-0',
         'drop-shadow',
         'flex',
         'font-bold',
