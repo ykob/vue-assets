@@ -53,15 +53,30 @@
       RadioButton3
     </radio-button>
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Toggle Switch</h2>
+  <div class="flex gap-4 mb-4">
+    <toggle-switch v-model="toggleSwitchValue1" />
+    <toggle-switch
+      v-model="toggleSwitchValue2"
+      label-off="False"
+      label-on="True"
+    />
+  </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <toggle-switch v-model="toggleSwitchValueDisabled1" disabled />
+    <toggle-switch v-model="toggleSwitchValueDisabled2" disabled />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import CheckboxAll from '@/components/checkbox/CheckboxAll.vue'
-import CheckboxSingle from '@/components/checkbox/CheckboxSingle.vue'
-import InputMultilineText from '@/components/input/InputMultilineText.vue'
-import InputText from '@/components/input/InputText.vue'
-import RadioButton from '@/components/radio-button/RadioButton.vue'
+import CheckboxAll from '@/components/form-element/CheckboxAll.vue'
+import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
+import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
+import InputText from '@/components/form-element/InputText.vue'
+import RadioButton from '@/components/form-element/RadioButton.vue'
+import ToggleSwitch from '@/components/form-element/ToggleSwitch.vue'
 
 export default defineComponent({
   name: 'ViewFormElements',
@@ -71,6 +86,7 @@ export default defineComponent({
     InputMultilineText,
     InputText,
     RadioButton,
+    ToggleSwitch,
   },
   data: () => ({
     checkArray: [],
@@ -78,6 +94,10 @@ export default defineComponent({
     inputText: '',
     InputMultilineText: '',
     radioValue: '',
+    toggleSwitchValue1: false,
+    toggleSwitchValue2: false,
+    toggleSwitchValueDisabled1: false,
+    toggleSwitchValueDisabled2: true,
   }),
 })
 </script>
