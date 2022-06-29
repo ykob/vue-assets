@@ -2,6 +2,7 @@
   <textarea
     v-bind="$attrs"
     :class="classnames"
+    :disabled="disabled"
     @change="changeHandler"
     @input="inputHandler"
   />
@@ -13,6 +14,10 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'InputMultilineText',
   props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     error: {
       type: Boolean,
       default: false,
@@ -20,14 +25,22 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      return [
-        'border',
-        'border-neutral-500',
-        'bg-neutral-50',
-        'p-4',
-        'placeholder-neutral-400',
-        'rounded',
-      ]
+      let classnamesEachStatus: string[] = []
+
+      if (this.disabled) {
+        classnamesEachStatus = [
+          'bg-neutral-100',
+          'border-neutral-300',
+          'placeholder-neutral-300',
+        ]
+      } else {
+        classnamesEachStatus = [
+          'bg-neutral-50',
+          'border-neutral-500',
+          'placeholder-neutral-400',
+        ]
+      }
+      return [...classnamesEachStatus, 'border', 'p-4', 'rounded']
     },
   },
   methods: {
