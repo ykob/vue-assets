@@ -30,7 +30,7 @@ export default defineComponent({
   computed: {
     classnamesContainer(): string[] {
       return [
-        'bg-neutral-300',
+        'bg-neutral-200',
         'flex',
         'h-9',
         'items-center',
@@ -43,8 +43,8 @@ export default defineComponent({
       const classnamesColors =
         this.disabled === true
           ? this.modelValue === true
-            ? ['bg-neutral-400', 'text-neutral-300']
-            : ['bg-neutral-200', 'text-neutral-400']
+            ? ['bg-neutral-300', 'text-neutral-200']
+            : ['bg-neutral-100', 'text-neutral-300']
           : this.modelValue === true
           ? ['bg-primary-500', 'text-neutral-50']
           : ['bg-neutral-50', 'text-primary-500']
