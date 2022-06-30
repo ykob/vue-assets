@@ -5,6 +5,7 @@
     :checked="checked"
     :desc="desc"
     :disabled="disabled"
+    :error="error"
     @change="onChange"
   >
     <slot></slot>
@@ -26,6 +27,10 @@ export default defineComponent({
       default: false,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
       type: Boolean,
       default: false,
     },

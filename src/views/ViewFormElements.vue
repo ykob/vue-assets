@@ -48,7 +48,13 @@
   </div>
   <h3 class="mb-4 text-xl">Disabled</h3>
   <div class="flex gap-4 mb-4">
-    <checkbox-single disabled value="check">
+    <checkbox-single v-model="checkBool" disabled value="check">
+      Checkbox has boolean
+    </checkbox-single>
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <checkbox-single v-model="checkBool" error value="check">
       Checkbox has boolean
     </checkbox-single>
   </div>
