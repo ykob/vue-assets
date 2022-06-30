@@ -3,12 +3,18 @@
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
+    <input-text v-model="inputText" error placeholder="has error" />
     <input-text v-model="inputText" disabled placeholder="disabled" />
   </div>
   <div class="flex gap-4">
     <input-multiline-text
       v-model="InputMultilineText"
       placeholder="placeholder"
+    />
+    <input-multiline-text
+      v-model="InputMultilineText"
+      error
+      placeholder="has error"
     />
     <input-multiline-text
       v-model="InputMultilineText"

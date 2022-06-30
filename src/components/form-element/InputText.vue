@@ -1,8 +1,8 @@
 <template>
   <input
-    v-bind="$attrs"
     :class="classnames"
     :disabled="disabled"
+    :value="modelValue"
     @change="changeHandler"
     @input="inputHandler"
   />
@@ -13,6 +13,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'InputText',
+  emits: ['update:modelValue'],
   props: {
     disabled: {
       type: Boolean,
@@ -21,6 +22,10 @@ export default defineComponent({
     error: {
       type: Boolean,
       default: false,
+    },
+    modelValue: {
+      type: String,
+      default: '',
     },
   },
   computed: {
@@ -47,7 +52,7 @@ export default defineComponent({
     changeHandler(event: Event): void {
       const { target } = event
       if (!(target instanceof HTMLInputElement)) return
-      this.$emit('change', target.value)
+      this.$emit('update:modelValue', target.value)
     },
     inputHandler(event: Event): void {
       const { target } = event
