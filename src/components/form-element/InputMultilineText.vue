@@ -38,6 +38,12 @@ export default defineComponent({
           'border-neutral-300',
           'placeholder-neutral-300',
         ]
+      } else if (this.error) {
+        classnamesEachStatus = [
+          'bg-error-50',
+          'border-error-500',
+          'placeholder-error-400',
+        ]
       } else {
         classnamesEachStatus = [
           'bg-neutral-50',
