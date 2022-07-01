@@ -36,6 +36,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    error: {
+      type: Boolean,
+      default: false,
+    },
     modelValue: {
       type: String,
       default: '',
@@ -50,6 +54,8 @@ export default defineComponent({
 
       if (this.disabled) {
         classnamesEachStatus = ['pointer-events-none', 'text-neutral-300']
+      } else if (this.error) {
+        classnamesEachStatus = ['text-error-500']
       } else {
         classnamesEachStatus = [
           'active:bg-information-200',
@@ -80,8 +86,6 @@ export default defineComponent({
       return [
         ...classnamesEachStatus,
         'bg-information-500',
-        'border-information-500',
-        'border',
         'h-3',
         'rounded-full',
         'w-3',
@@ -92,6 +96,8 @@ export default defineComponent({
 
       if (this.disabled) {
         classnamesEachStatus = ['bg-neutral-100', 'border-neutral-300']
+      } else if (this.error) {
+        classnamesEachStatus = ['bg-error-50', 'border-error-500']
       } else {
         classnamesEachStatus = ['bg-neutral-50', 'border-neutral-500']
       }

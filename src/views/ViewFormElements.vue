@@ -73,7 +73,15 @@
   </div>
   <h3 class="mb-4 text-xl">Disabled</h3>
   <div class="flex gap-4 mb-4">
-    <radio-button disabled value="radio1"> RadioButton1 </radio-button>
+    <radio-button v-model="radioValue" disabled value="radio1">
+      RadioButton1
+    </radio-button>
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <radio-button v-model="radioValue" error value="radio1">
+      RadioButton1
+    </radio-button>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Toggle Switch</h2>
   <div class="flex gap-4 mb-4">
