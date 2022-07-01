@@ -32,10 +32,6 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    error: {
-      type: Boolean,
-      default: false,
-    },
     checked: {
       type: Boolean,
       default: false,
@@ -45,6 +41,10 @@ export default defineComponent({
       default: false,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
       type: Boolean,
       default: false,
     },
