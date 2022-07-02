@@ -97,6 +97,10 @@
     <toggle-switch v-model="toggleSwitchValueDisabled1" disabled />
     <toggle-switch v-model="toggleSwitchValueDisabled2" disabled />
   </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <toggle-switch v-model="toggleSwitchValue1" error />
+  </div>
 </template>
 
 <script lang="ts">
