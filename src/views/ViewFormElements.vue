@@ -3,12 +3,18 @@
   <h2 class="mt-12 mb-4 text-3xl">Inputs</h2>
   <div class="flex gap-4 mb-4">
     <input-text v-model="inputText" placeholder="placeholder" />
+    <input-text v-model="inputText" error placeholder="has error" />
     <input-text v-model="inputText" disabled placeholder="disabled" />
   </div>
   <div class="flex gap-4">
     <input-multiline-text
       v-model="InputMultilineText"
       placeholder="placeholder"
+    />
+    <input-multiline-text
+      v-model="InputMultilineText"
+      error
+      placeholder="has error"
     />
     <input-multiline-text
       v-model="InputMultilineText"
@@ -42,7 +48,13 @@
   </div>
   <h3 class="mb-4 text-xl">Disabled</h3>
   <div class="flex gap-4 mb-4">
-    <checkbox-single disabled value="check">
+    <checkbox-single v-model="checkBool" disabled value="check">
+      Checkbox has boolean
+    </checkbox-single>
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <checkbox-single v-model="checkBool" error value="check">
       Checkbox has boolean
     </checkbox-single>
   </div>
@@ -61,7 +73,15 @@
   </div>
   <h3 class="mb-4 text-xl">Disabled</h3>
   <div class="flex gap-4 mb-4">
-    <radio-button disabled value="radio1"> RadioButton1 </radio-button>
+    <radio-button v-model="radioValue" disabled value="radio1">
+      RadioButton1
+    </radio-button>
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <radio-button v-model="radioValue" error value="radio1">
+      RadioButton1
+    </radio-button>
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Toggle Switch</h2>
   <div class="flex gap-4 mb-4">
@@ -76,6 +96,10 @@
   <div class="flex gap-4 mb-4">
     <toggle-switch v-model="toggleSwitchValueDisabled1" disabled />
     <toggle-switch v-model="toggleSwitchValueDisabled2" disabled />
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <toggle-switch v-model="toggleSwitchValue1" error />
   </div>
 </template>
 

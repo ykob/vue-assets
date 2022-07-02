@@ -32,11 +32,11 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    value: {
-      type: String,
-      default: '',
-    },
     checked: {
+      type: Boolean,
+      default: false,
+    },
+    desc: {
       type: Boolean,
       default: false,
     },
@@ -44,9 +44,13 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    desc: {
+    error: {
       type: Boolean,
       default: false,
+    },
+    value: {
+      type: String,
+      default: '',
     },
   },
   computed: {
@@ -55,6 +59,8 @@ export default defineComponent({
 
       if (this.disabled) {
         classnamesEachStatus = ['pointer-events-none', 'text-neutral-300']
+      } else if (this.error) {
+        classnamesEachStatus = ['text-error-500']
       } else {
         classnamesEachStatus = [
           'active:bg-information-200',
@@ -81,6 +87,8 @@ export default defineComponent({
         classnamesEachStatus = ['bg-information-500', 'border-information-500']
       } else if (this.disabled) {
         classnamesEachStatus = ['bg-neutral-100', 'border-neutral-300']
+      } else if (this.error) {
+        classnamesEachStatus = ['bg-error-50', 'border-error-500']
       } else {
         classnamesEachStatus = ['bg-neutral-50', 'border-neutral-500']
       }

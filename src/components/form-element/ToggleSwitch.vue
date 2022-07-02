@@ -14,6 +14,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    error: {
+      type: Boolean,
+      default: false,
+    },
     labelOff: {
       type: String,
       default: 'OFF',
@@ -29,8 +33,15 @@ export default defineComponent({
   },
   computed: {
     classnamesContainer(): string[] {
+      let classnamesColors: string[] = []
+
+      if (this.error) {
+        classnamesColors = ['bg-error-200']
+      } else {
+        classnamesColors = ['bg-neutral-200']
+      }
       return [
-        'bg-neutral-200',
+        ...classnamesColors,
         'flex',
         'h-9',
         'items-center',
@@ -40,14 +51,24 @@ export default defineComponent({
       ]
     },
     classnamesKnob(): string[] {
-      const classnamesColors =
-        this.disabled === true
-          ? this.modelValue === true
+      let classnamesColors: string[] = []
+
+      if (this.disabled) {
+        classnamesColors =
+          this.modelValue === true
             ? ['bg-neutral-300', 'text-neutral-200']
             : ['bg-neutral-100', 'text-neutral-300']
-          : this.modelValue === true
-          ? ['bg-primary-500', 'text-neutral-50']
-          : ['bg-neutral-50', 'text-primary-500']
+      } else if (this.error) {
+        classnamesColors =
+          this.modelValue === true
+            ? ['bg-error-500', 'text-error-50']
+            : ['bg-error-50', 'text-error-500']
+      } else {
+        classnamesColors =
+          this.modelValue === true
+            ? ['bg-primary-500', 'text-neutral-50']
+            : ['bg-neutral-50', 'text-primary-500']
+      }
       return [
         ...classnamesColors,
         this.modelValue ? 'translate-x-6' : 'translate-x-0',
