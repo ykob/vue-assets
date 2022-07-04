@@ -6,7 +6,7 @@
     <input-text v-model="inputText" error placeholder="has error" />
     <input-text v-model="inputText" disabled placeholder="disabled" />
   </div>
-  <div class="flex gap-4">
+  <div class="flex gap-4 mb-4">
     <input-multiline-text
       v-model="InputMultilineText"
       placeholder="placeholder"
