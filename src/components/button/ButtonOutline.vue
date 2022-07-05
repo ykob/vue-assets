@@ -1,5 +1,10 @@
 <template>
-  <button-basics :class="classnames" :tag="tag" @click="$emit('accepted')">
+  <button-basics
+    :class="classnames"
+    :loading="loading"
+    :tag="tag"
+    @click="$emit('accepted')"
+  >
     <icon-svg v-if="icon !== undefined" :d="icon" :size="buttonSize" />
     <slot></slot>
   </button-basics>
@@ -37,7 +42,7 @@ export default defineComponent({
       type: String || undefined,
       default: undefined,
     },
-    isLoading: {
+    loading: {
       type: Boolean,
       default: false,
     },
