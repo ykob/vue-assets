@@ -1,13 +1,22 @@
 <template>
-  <button-basics :class="classnames" :tag="tag" @click="$emit('accepted')">
-    <icon-svg v-if="icon !== undefined" :d="icon" :size="buttonSize" />
-    <slot></slot>
+  <button-basics
+    :class="classnames"
+    :loading="loading"
+    :tag="tag"
+    @click="$emit('accepted')"
+  >
+    <icon-loading v-if="loading === true" :size="buttonSize" />
+    <template v-else>
+      <icon-svg v-if="icon !== undefined" :d="icon" :size="buttonSize" />
+      <slot></slot>
+    </template>
   </button-basics>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
+import IconLoading from '@/components/icon/IconLoading.vue'
 import IconSvg from '@/components/icon/IconSvg.vue'
 import { Semantics } from '@/types/'
 
@@ -18,6 +27,7 @@ export default defineComponent({
   emits: ['accepted'],
   components: {
     ButtonBasics,
+    IconLoading,
     IconSvg,
   },
   props: {
@@ -37,7 +47,7 @@ export default defineComponent({
       type: String || undefined,
       default: undefined,
     },
-    isLoading: {
+    loading: {
       type: Boolean,
       default: false,
     },
