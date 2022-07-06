@@ -199,6 +199,33 @@
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-outline>
   </div>
+  <h3 class="mb-4 text-xl">Loading</h3>
+  <div class="flex gap-4 mb-4">
+    <div class="w-40">
+      <button-outline buttonSize="s" :icon="icon.mdiGithub" loading>
+        Button S
+      </button-outline>
+    </div>
+    <div class="w-40">
+      <button-outline buttonSize="m" :icon="icon.mdiGithub" loading>
+        Button M
+      </button-outline>
+    </div>
+    <div class="w-40">
+      <button-outline buttonSize="l" :icon="icon.mdiGithub" loading>
+        Button L
+      </button-outline>
+    </div>
+    <button-outline buttonSize="s" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="s" />
+    </button-outline>
+    <button-outline buttonSize="m" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="m" />
+    </button-outline>
+    <button-outline buttonSize="l" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="l" />
+    </button-outline>
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Button Transparent</h2>
   <div class="flex gap-4 mb-4">
     <button-transparent buttonType="primary"> Button </button-transparent>
