@@ -5,6 +5,7 @@
       :icon="icon.mdiArrowRight"
       tag="router-link"
       to="/buttons"
+      shrink
     >
       Buttons
     </button-transparent>
@@ -12,6 +13,7 @@
       :icon="icon.mdiArrowRight"
       tag="router-link"
       to="/form-elements"
+      shrink
     >
       Form Elements
     </button-transparent>
@@ -19,6 +21,7 @@
       :icon="icon.mdiArrowRight"
       tag="router-link"
       to="/icons"
+      shrink
     >
       Icons
     </button-transparent>

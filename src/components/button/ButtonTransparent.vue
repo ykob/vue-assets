@@ -53,6 +53,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    shrink: {
+      type: Boolean,
+      default: false,
+    },
     tag: {
       type: String,
       default: 'button',
@@ -114,25 +118,27 @@ export default defineComponent({
         }
       }
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
+        const classnamesWidth = this.shrink === true ? ['px-4'] : ['w-full']
+
         switch (buttonSize) {
           case 's':
             if (this.circle) {
               return ['h-7', 'text-sm', 'w-7']
             } else {
-              return ['h-6', 'text-sm', 'w-full']
+              return ['h-6', 'text-sm', ...classnamesWidth]
             }
           case 'm':
           default:
             if (this.circle) {
               return ['h-9', 'text-base', 'w-9']
             } else {
-              return ['h-7', 'text-base', 'w-full']
+              return ['h-7', 'text-base', ...classnamesWidth]
             }
           case 'l':
             if (this.circle) {
               return ['h-11', 'text-lg', 'w-11']
             } else {
-              return ['h-8', 'text-lg', 'w-full']
+              return ['h-8', 'text-lg', ...classnamesWidth]
             }
         }
       }
