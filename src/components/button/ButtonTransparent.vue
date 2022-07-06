@@ -5,14 +5,20 @@
     :tag="tag"
     @click="$emit('accepted')"
   >
-    <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
-    <slot></slot>
+    <div v-if="loading === true" class="flex">
+      <icon-loading :size="buttonSize" />
+    </div>
+    <template v-else>
+      <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
+      <slot></slot>
+    </template>
   </button-basics>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
+import IconLoading from '@/components/icon/IconLoading.vue'
 import IconSvg from '@/components/icon/IconSvg.vue'
 import { Semantics } from '@/types/'
 
@@ -23,6 +29,7 @@ export default defineComponent({
   emits: ['accepted'],
   components: {
     ButtonBasics,
+    IconLoading,
     IconSvg,
   },
   props: {
@@ -112,20 +119,20 @@ export default defineComponent({
             if (this.circle) {
               return ['h-7', 'text-sm', 'w-7']
             } else {
-              return ['h-6', 'text-sm']
+              return ['h-6', 'text-sm', 'w-full']
             }
           case 'm':
           default:
             if (this.circle) {
               return ['h-9', 'text-base', 'w-9']
             } else {
-              return ['h-7', 'text-base']
+              return ['h-7', 'text-base', 'w-full']
             }
           case 'l':
             if (this.circle) {
               return ['h-11', 'text-lg', 'w-11']
             } else {
-              return ['h-8', 'text-lg']
+              return ['h-8', 'text-lg', 'w-full']
             }
         }
       }

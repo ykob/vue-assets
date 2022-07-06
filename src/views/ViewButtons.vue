@@ -318,6 +318,33 @@
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-transparent>
   </div>
+  <h3 class="mb-4 text-xl">Loading</h3>
+  <div class="flex gap-4 mb-4">
+    <div class="w-40">
+      <button-transparent buttonSize="s" :icon="icon.mdiGithub" loading>
+        Button S
+      </button-transparent>
+    </div>
+    <div class="w-40">
+      <button-transparent buttonSize="m" :icon="icon.mdiGithub" loading>
+        Button M
+      </button-transparent>
+    </div>
+    <div class="w-40">
+      <button-transparent buttonSize="l" :icon="icon.mdiGithub" loading>
+        Button L
+      </button-transparent>
+    </div>
+    <button-transparent buttonSize="s" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="s" />
+    </button-transparent>
+    <button-transparent buttonSize="m" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="m" />
+    </button-transparent>
+    <button-transparent buttonSize="l" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="l" />
+    </button-transparent>
+  </div>
 </template>
 
 <script lang="ts">
