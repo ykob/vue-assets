@@ -118,27 +118,25 @@ export default defineComponent({
         }
       }
       const sizeClassnames = (buttonSize: ButtonSize): string[] => {
-        const classnamesWidth = this.shrink === true ? ['px-4'] : ['w-full']
-
         switch (buttonSize) {
           case 's':
             if (this.circle) {
               return ['h-7', 'text-sm', 'w-7']
             } else {
-              return ['h-6', 'text-sm', ...classnamesWidth]
+              return ['h-6', 'text-sm', this.shrink ? 'px-2' : 'w-full']
             }
           case 'm':
           default:
             if (this.circle) {
               return ['h-9', 'text-base', 'w-9']
             } else {
-              return ['h-7', 'text-base', ...classnamesWidth]
+              return ['h-7', 'text-base', this.shrink ? 'px-3' : 'w-full']
             }
           case 'l':
             if (this.circle) {
               return ['h-11', 'text-lg', 'w-11']
             } else {
-              return ['h-8', 'text-lg', ...classnamesWidth]
+              return ['h-8', 'text-lg', this.shrink ? 'px-4' : 'w-full']
             }
         }
       }
@@ -146,7 +144,7 @@ export default defineComponent({
       return [
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
-        ...(this.circle ? ['rounded-full'] : ['px-2', 'rounded']),
+        this.circle ? 'rounded-full' : 'rounded',
         'font-medium',
         'gap-1',
         'transition-colors',
