@@ -59,6 +59,21 @@
       Button L
     </button-block>
   </div>
+  <h3 class="mb-4 text-xl">Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" shrink> Button S </button-block>
+    <button-block buttonSize="m" shrink> Button M </button-block>
+    <button-block buttonSize="l" shrink> Button L </button-block>
+    <button-block buttonSize="s" :icon="icon.mdiGithub" shrink>
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub" shrink>
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub" shrink>
+      Button L
+    </button-block>
+  </div>
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-block buttonSize="s" circle>
@@ -178,6 +193,21 @@
       Button L
     </button-outline>
   </div>
+  <h3 class="mb-4 text-xl">Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" shrink> Button S </button-outline>
+    <button-outline buttonSize="m" shrink> Button M </button-outline>
+    <button-outline buttonSize="l" shrink> Button L </button-outline>
+    <button-outline buttonSize="s" :icon="icon.mdiGithub" shrink>
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub" shrink>
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub" shrink>
+      Button L
+    </button-outline>
+  </div>
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-outline buttonSize="s" circle>
@@ -294,6 +324,21 @@
       buttonType="secondary"
       :icon="icon.mdiArrowRight"
     >
+      Button L
+    </button-transparent>
+  </div>
+  <h3 class="mb-4 text-xl">Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonSize="s" shrink> Button S </button-transparent>
+    <button-transparent buttonSize="m" shrink> Button M </button-transparent>
+    <button-transparent buttonSize="l" shrink> Button L </button-transparent>
+    <button-transparent buttonSize="s" :icon="icon.mdiGithub" shrink>
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m" :icon="icon.mdiGithub" shrink>
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l" :icon="icon.mdiGithub" shrink>
       Button L
     </button-transparent>
   </div>
