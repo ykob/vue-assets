@@ -128,9 +128,9 @@ export default defineComponent({
             ]
           case 'l':
             return [
-              'h-14',
+              'h-12',
               'text-lg',
-              this.circle ? 'w-14' : this.shrink ? 'px-6' : 'w-full',
+              this.circle ? 'w-12' : this.shrink ? 'px-6' : 'w-full',
             ]
         }
       }
