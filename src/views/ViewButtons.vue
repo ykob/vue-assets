@@ -97,21 +97,57 @@
   </div>
   <h3 class="mb-4 text-xl">Loading</h3>
   <div class="flex gap-4 mb-4">
-    <div class="w-40">
-      <button-block buttonSize="s" :icon="icon.mdiGithub" loading>
-        Button S
-      </button-block>
-    </div>
-    <div class="w-40">
-      <button-block buttonSize="m" :icon="icon.mdiGithub" loading>
-        Button M
-      </button-block>
-    </div>
-    <div class="w-40">
-      <button-block buttonSize="l" :icon="icon.mdiGithub" loading>
-        Button L
-      </button-block>
-    </div>
+    <button-block buttonSize="s" :icon="icon.mdiGithub" loading>
+      Button S
+    </button-block>
+    <button-block
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub" loading>
+      Button M
+    </button-block>
+    <button-block
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub" loading>
+      Button L
+    </button-block>
+    <button-block
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button L
+    </button-block>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" loading shrink> Button S </button-block>
+    <button-block buttonSize="m" loading shrink> Button M </button-block>
+    <button-block buttonSize="l" loading shrink> Button L </button-block>
+    <button-block buttonSize="s" :icon="icon.mdiGithub" loading shrink>
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub" loading shrink>
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub" loading shrink>
+      Button L
+    </button-block>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Circle</h3>
+  <div class="flex gap-4 mb-4">
     <button-block buttonSize="s" circle loading>
       <icon-svg :d="icon.mdiGithub" size="s" />
     </button-block>

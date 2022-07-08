@@ -5,11 +5,16 @@
     :tag="tag"
     @click="$emit('accepted')"
   >
-    <icon-loading v-if="loading === true" :size="buttonSize" />
-    <template v-else>
+    <div
+      v-if="loading === true"
+      class="absolute flex h-full items-center justify-center left-0 top-0 w-full"
+    >
+      <icon-loading :size="buttonSize" />
+    </div>
+    <div :class="classnamesInner">
       <icon-svg v-if="icon !== undefined" :d="icon" :size="buttonSize" />
       <slot></slot>
-    </template>
+    </div>
   </button-basics>
 </template>
 
@@ -140,10 +145,14 @@ export default defineComponent({
         ...sizeClassnames(this.buttonSize),
         ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
         'font-medium',
-        'gap-2',
+        'relative',
         'text-neutral-50',
         'transition-colors',
       ]
+    },
+    classnamesInner(): string[] {
+      const classnamesBase = ['flex', 'gap-2']
+      return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
     },
   },
 })
