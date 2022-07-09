@@ -267,21 +267,57 @@
   </div>
   <h3 class="mb-4 text-xl">Loading</h3>
   <div class="flex gap-4 mb-4">
-    <div class="w-40">
-      <button-outline buttonSize="s" :icon="icon.mdiGithub" loading>
-        Button S
-      </button-outline>
-    </div>
-    <div class="w-40">
-      <button-outline buttonSize="m" :icon="icon.mdiGithub" loading>
-        Button M
-      </button-outline>
-    </div>
-    <div class="w-40">
-      <button-outline buttonSize="l" :icon="icon.mdiGithub" loading>
-        Button L
-      </button-outline>
-    </div>
+    <button-outline buttonSize="s" :icon="icon.mdiGithub" loading>
+      Button S
+    </button-outline>
+    <button-outline
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub" loading>
+      Button M
+    </button-outline>
+    <button-outline
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub" loading>
+      Button L
+    </button-outline>
+    <button-outline
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button L
+    </button-outline>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" loading shrink> Button S </button-outline>
+    <button-outline buttonSize="m" loading shrink> Button M </button-outline>
+    <button-outline buttonSize="l" loading shrink> Button L </button-outline>
+    <button-outline buttonSize="s" :icon="icon.mdiGithub" loading shrink>
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub" loading shrink>
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub" loading shrink>
+      Button L
+    </button-outline>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Circle</h3>
+  <div class="flex gap-4 mb-4">
     <button-outline buttonSize="s" circle loading>
       <icon-svg :d="icon.mdiGithub" size="s" />
     </button-outline>
