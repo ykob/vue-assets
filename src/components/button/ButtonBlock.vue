@@ -151,7 +151,7 @@ export default defineComponent({
       ]
     },
     classnamesInner(): string[] {
-      const classnamesBase = ['flex', 'gap-2']
+      const classnamesBase = ['flex', 'gap-2', 'items-center']
       return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
     },
   },
