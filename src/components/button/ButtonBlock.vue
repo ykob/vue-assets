@@ -5,16 +5,16 @@
     :tag="tag"
     @click="$emit('accepted')"
   >
-    <div
+    <span
       v-if="loading === true"
       class="absolute flex h-full items-center justify-center left-0 top-0 w-full"
     >
       <icon-loading :size="buttonSize" />
-    </div>
-    <div :class="classnamesInner">
+    </span>
+    <span :class="classnamesInner">
       <icon-svg v-if="icon !== undefined" :d="icon" :size="buttonSize" />
       <slot></slot>
-    </div>
+    </span>
   </button-basics>
 </template>
 
