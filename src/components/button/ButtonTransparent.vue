@@ -1,13 +1,27 @@
 <template>
-  <button-basics :class="classnames" :tag="tag" @click="$emit('accepted')">
-    <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
-    <slot></slot>
+  <button-basics
+    :class="classnames"
+    :loading="loading"
+    :tag="tag"
+    @click="$emit('accepted')"
+  >
+    <span
+      v-if="loading === true"
+      class="absolute flex h-full items-center justify-center left-0 top-0 w-full"
+    >
+      <icon-loading :size="iconSize" />
+    </span>
+    <span :class="classnamesInner">
+      <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
+      <slot></slot>
+    </span>
   </button-basics>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
+import IconLoading from '@/components/icon/IconLoading.vue'
 import IconSvg from '@/components/icon/IconSvg.vue'
 import { Semantics } from '@/types/'
 
@@ -18,6 +32,7 @@ export default defineComponent({
   emits: ['accepted'],
   components: {
     ButtonBasics,
+    IconLoading,
     IconSvg,
   },
   props: {
@@ -37,7 +52,11 @@ export default defineComponent({
       type: String || undefined,
       default: undefined,
     },
-    isLoading: {
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    shrink: {
       type: Boolean,
       default: false,
     },
@@ -107,20 +126,20 @@ export default defineComponent({
             if (this.circle) {
               return ['h-7', 'text-sm', 'w-7']
             } else {
-              return ['h-6', 'text-sm']
+              return ['h-6', 'text-sm', this.shrink ? 'px-2' : 'w-full']
             }
           case 'm':
           default:
             if (this.circle) {
               return ['h-9', 'text-base', 'w-9']
             } else {
-              return ['h-7', 'text-base']
+              return ['h-7', 'text-base', this.shrink ? 'px-3' : 'w-full']
             }
           case 'l':
             if (this.circle) {
               return ['h-11', 'text-lg', 'w-11']
             } else {
-              return ['h-8', 'text-lg']
+              return ['h-8', 'text-lg', this.shrink ? 'px-4' : 'w-full']
             }
         }
       }
@@ -128,12 +147,16 @@ export default defineComponent({
       return [
         ...colorClassnames(this.buttonType),
         ...sizeClassnames(this.buttonSize),
-        ...(this.circle ? ['rounded-full'] : ['px-2', 'rounded']),
+        this.circle ? 'rounded-full' : 'rounded',
         'font-medium',
-        'gap-1',
+        'relative',
         'transition-colors',
         'hover:text-neutral-50',
       ]
+    },
+    classnamesInner(): string[] {
+      const classnamesBase = ['flex', 'gap-1', 'items-center']
+      return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
     },
     iconSize(): string {
       switch (this.buttonSize) {

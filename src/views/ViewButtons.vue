@@ -59,6 +59,21 @@
       Button L
     </button-block>
   </div>
+  <h3 class="mb-4 text-xl">Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" shrink> Button S </button-block>
+    <button-block buttonSize="m" shrink> Button M </button-block>
+    <button-block buttonSize="l" shrink> Button L </button-block>
+    <button-block buttonSize="s" :icon="icon.mdiGithub" shrink>
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub" shrink>
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub" shrink>
+      Button L
+    </button-block>
+  </div>
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-block buttonSize="s" circle>
@@ -77,6 +92,69 @@
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-block>
     <button-block buttonSize="l" buttonType="secondary" circle>
+      <icon-svg :d="icon.mdiGithub" size="l" />
+    </button-block>
+  </div>
+  <h3 class="mb-4 text-xl">Loading</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" :icon="icon.mdiGithub" loading>
+      Button S
+    </button-block>
+    <button-block
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub" loading>
+      Button M
+    </button-block>
+    <button-block
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub" loading>
+      Button L
+    </button-block>
+    <button-block
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button L
+    </button-block>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" loading shrink> Button S </button-block>
+    <button-block buttonSize="m" loading shrink> Button M </button-block>
+    <button-block buttonSize="l" loading shrink> Button L </button-block>
+    <button-block buttonSize="s" :icon="icon.mdiGithub" loading shrink>
+      Button S
+    </button-block>
+    <button-block buttonSize="m" :icon="icon.mdiGithub" loading shrink>
+      Button M
+    </button-block>
+    <button-block buttonSize="l" :icon="icon.mdiGithub" loading shrink>
+      Button L
+    </button-block>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Circle</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonSize="s" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="s" />
+    </button-block>
+    <button-block buttonSize="m" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="m" />
+    </button-block>
+    <button-block buttonSize="l" circle loading>
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-block>
   </div>
@@ -151,6 +229,21 @@
       Button L
     </button-outline>
   </div>
+  <h3 class="mb-4 text-xl">Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" shrink> Button S </button-outline>
+    <button-outline buttonSize="m" shrink> Button M </button-outline>
+    <button-outline buttonSize="l" shrink> Button L </button-outline>
+    <button-outline buttonSize="s" :icon="icon.mdiGithub" shrink>
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub" shrink>
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub" shrink>
+      Button L
+    </button-outline>
+  </div>
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-outline buttonSize="s" circle>
@@ -169,6 +262,69 @@
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-outline>
     <button-outline buttonSize="l" buttonType="secondary" circle>
+      <icon-svg :d="icon.mdiGithub" size="l" />
+    </button-outline>
+  </div>
+  <h3 class="mb-4 text-xl">Loading</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" :icon="icon.mdiGithub" loading>
+      Button S
+    </button-outline>
+    <button-outline
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub" loading>
+      Button M
+    </button-outline>
+    <button-outline
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub" loading>
+      Button L
+    </button-outline>
+    <button-outline
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button L
+    </button-outline>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" loading shrink> Button S </button-outline>
+    <button-outline buttonSize="m" loading shrink> Button M </button-outline>
+    <button-outline buttonSize="l" loading shrink> Button L </button-outline>
+    <button-outline buttonSize="s" :icon="icon.mdiGithub" loading shrink>
+      Button S
+    </button-outline>
+    <button-outline buttonSize="m" :icon="icon.mdiGithub" loading shrink>
+      Button M
+    </button-outline>
+    <button-outline buttonSize="l" :icon="icon.mdiGithub" loading shrink>
+      Button L
+    </button-outline>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Circle</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonSize="s" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="s" />
+    </button-outline>
+    <button-outline buttonSize="m" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="m" />
+    </button-outline>
+    <button-outline buttonSize="l" circle loading>
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-outline>
   </div>
@@ -243,6 +399,21 @@
       Button L
     </button-transparent>
   </div>
+  <h3 class="mb-4 text-xl">Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonSize="s" shrink> Button S </button-transparent>
+    <button-transparent buttonSize="m" shrink> Button M </button-transparent>
+    <button-transparent buttonSize="l" shrink> Button L </button-transparent>
+    <button-transparent buttonSize="s" :icon="icon.mdiGithub" shrink>
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m" :icon="icon.mdiGithub" shrink>
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l" :icon="icon.mdiGithub" shrink>
+      Button L
+    </button-transparent>
+  </div>
   <h3 class="mb-4 text-xl">Circle</h3>
   <div class="flex gap-4 mb-4">
     <button-transparent buttonSize="s" circle>
@@ -261,6 +432,75 @@
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-transparent>
     <button-transparent buttonSize="l" buttonType="secondary" circle>
+      <icon-svg :d="icon.mdiGithub" size="l" />
+    </button-transparent>
+  </div>
+  <h3 class="mb-4 text-xl">Loading</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonSize="s" :icon="icon.mdiGithub" loading>
+      Button S
+    </button-transparent>
+    <button-transparent
+      buttonSize="s"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m" :icon="icon.mdiGithub" loading>
+      Button M
+    </button-transparent>
+    <button-transparent
+      buttonSize="m"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l" :icon="icon.mdiGithub" loading>
+      Button L
+    </button-transparent>
+    <button-transparent
+      buttonSize="l"
+      buttonType="secondary"
+      :icon="icon.mdiGithub"
+      loading
+    >
+      Button L
+    </button-transparent>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Shrink</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonSize="s" loading shrink>
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m" loading shrink>
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l" loading shrink>
+      Button L
+    </button-transparent>
+    <button-transparent buttonSize="s" :icon="icon.mdiGithub" loading shrink>
+      Button S
+    </button-transparent>
+    <button-transparent buttonSize="m" :icon="icon.mdiGithub" loading shrink>
+      Button M
+    </button-transparent>
+    <button-transparent buttonSize="l" :icon="icon.mdiGithub" loading shrink>
+      Button L
+    </button-transparent>
+  </div>
+  <h3 class="mb-4 text-xl">Loading with Circle</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent buttonSize="s" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="s" />
+    </button-transparent>
+    <button-transparent buttonSize="m" circle loading>
+      <icon-svg :d="icon.mdiGithub" size="m" />
+    </button-transparent>
+    <button-transparent buttonSize="l" circle loading>
       <icon-svg :d="icon.mdiGithub" size="l" />
     </button-transparent>
   </div>
