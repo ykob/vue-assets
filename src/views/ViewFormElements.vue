@@ -101,12 +101,17 @@
   <div class="flex gap-4 mb-4">
     <toggle-switch v-model="toggleSwitchValue1" error />
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">File</h2>
+  <div class="flex gap-4 mb-4">
+    <InputFile />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import CheckboxAll from '@/components/form-element/CheckboxAll.vue'
 import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
+import InputFile from '@/components/form-element/InputFile.vue'
 import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
 import InputText from '@/components/form-element/InputText.vue'
 import RadioButton from '@/components/form-element/RadioButton.vue'
@@ -117,6 +122,7 @@ export default defineComponent({
   components: {
     CheckboxAll,
     CheckboxSingle,
+    InputFile,
     InputMultilineText,
     InputText,
     RadioButton,
