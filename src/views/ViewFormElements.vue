@@ -8,16 +8,16 @@
   </div>
   <div class="flex gap-4 mb-4">
     <input-multiline-text
-      v-model="InputMultilineText"
+      v-model="inputMultilineText"
       placeholder="placeholder"
     />
     <input-multiline-text
-      v-model="InputMultilineText"
+      v-model="inputMultilineText"
       error
       placeholder="has error"
     />
     <input-multiline-text
-      v-model="InputMultilineText"
+      v-model="inputMultilineText"
       disabled
       placeholder="disabled"
     />
@@ -132,7 +132,7 @@ export default defineComponent({
     checkArray: [],
     checkBool: false,
     inputText: '',
-    InputMultilineText: '',
+    inputMultilineText: '',
     radioValue: '',
     toggleSwitchValue1: false,
     toggleSwitchValue2: false,
