@@ -103,7 +103,7 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">File</h2>
   <div class="flex gap-4 mb-4">
-    <InputFile />
+    <InputFile v-model="inputFile" />
   </div>
 </template>
 
@@ -138,6 +138,7 @@ export default defineComponent({
     toggleSwitchValue2: false,
     toggleSwitchValueDisabled1: false,
     toggleSwitchValueDisabled2: true,
+    inputFile: '',
   }),
 })
 </script>
