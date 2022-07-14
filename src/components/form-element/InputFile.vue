@@ -1,16 +1,23 @@
 <template>
-  <input
-    type="file"
-    :disabled="disabled"
-    :value="modelValue"
-    @change="changeHandler"
-  />
+  <div>
+    <input
+      class="hidden"
+      ref="input"
+      type="file"
+      :disabled="disabled"
+      :value="modelValue"
+      @change="changeHandler"
+    />
+    <button-block shrink @click="clickHandler">Select Files.</button-block>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import ButtonBlock from '../button/ButtonBlock.vue'
 
 export default defineComponent({
+  components: { ButtonBlock },
   name: 'InputFile',
   props: {
     disabled: {
@@ -37,6 +44,11 @@ export default defineComponent({
       if (!(target instanceof HTMLInputElement)) return
       this.fileList = target.files
       this.$emit('update:modelValue', target.value)
+    },
+    clickHandler() {
+      const { input } = this.$refs
+      if (!(input instanceof HTMLInputElement)) return
+      input.click()
     },
   },
 })
