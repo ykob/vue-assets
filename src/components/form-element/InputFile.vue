@@ -8,12 +8,15 @@
       :value="modelValue"
       @change="changeHandler"
     />
-    <button-block shrink @click="clickHandler">Select Files.</button-block>
+    <button-block :icon="d" shrink @click="clickHandler">
+      Select Files
+    </button-block>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { mdiFile } from '@mdi/js'
 import ButtonBlock from '../button/ButtonBlock.vue'
 
 export default defineComponent({
@@ -34,8 +37,10 @@ export default defineComponent({
     },
   },
   data: (): {
+    d: string
     fileList: FileList | null
   } => ({
+    d: mdiFile,
     fileList: null,
   }),
   methods: {
