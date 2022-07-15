@@ -5,19 +5,29 @@
     :is="tag"
     @click="handleClick"
   >
-    <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
-    <slot></slot>
+    <span
+      v-if="loading === true"
+      class="absolute flex h-full items-center justify-center left-0 top-0 w-full"
+    >
+      <icon-loading :size="iconSize" />
+    </span>
+    <span :class="classnamesInner">
+      <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
+      <slot></slot>
+    </span>
   </component>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import IconLoading from '@/components/icon/IconLoading.vue'
 import IconSvg from '@/components/icon/IconSvg.vue'
 
 export default defineComponent({
   name: 'ButtonBasics',
   emits: ['accepted'],
   components: {
+    IconLoading,
     IconSvg,
   },
   props: {
@@ -45,6 +55,10 @@ export default defineComponent({
       } else {
         return []
       }
+    },
+    classnamesInner(): string[] {
+      const classnamesBase = ['flex', 'gap-2', 'items-center']
+      return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
     },
   },
   methods: {

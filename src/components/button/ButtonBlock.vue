@@ -7,22 +7,13 @@
     :tag="tag"
     @click="$emit('accepted')"
   >
-    <span
-      v-if="loading === true"
-      class="absolute flex h-full items-center justify-center left-0 top-0 w-full"
-    >
-      <icon-loading :size="buttonSize" />
-    </span>
-    <span :class="classnamesInner">
-      <slot></slot>
-    </span>
+    <slot></slot>
   </button-basics>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
-import IconLoading from '@/components/icon/IconLoading.vue'
 import { Semantics } from '@/types/'
 
 type ButtonSize = 's' | 'm' | 'l'
@@ -32,7 +23,6 @@ export default defineComponent({
   emits: ['accepted'],
   components: {
     ButtonBasics,
-    IconLoading,
   },
   props: {
     buttonSize: {
@@ -148,10 +138,6 @@ export default defineComponent({
         'text-neutral-50',
         'transition-colors',
       ]
-    },
-    classnamesInner(): string[] {
-      const classnamesBase = ['flex', 'gap-2', 'items-center']
-      return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
     },
   },
 })
