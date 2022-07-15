@@ -1,6 +1,8 @@
 <template>
   <button-basics
     :class="classnames"
+    :icon="icon"
+    :icon-size="buttonSize"
     :loading="loading"
     :tag="tag"
     @click="$emit('accepted')"
@@ -12,7 +14,6 @@
       <icon-loading :size="iconSize" />
     </span>
     <span :class="classnamesInner">
-      <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
       <slot></slot>
     </span>
   </button-basics>
@@ -22,7 +23,6 @@
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
 import IconLoading from '@/components/icon/IconLoading.vue'
-import IconSvg from '@/components/icon/IconSvg.vue'
 import { Semantics } from '@/types/'
 
 type ButtonSize = 's' | 'm' | 'l'
@@ -33,7 +33,6 @@ export default defineComponent({
   components: {
     ButtonBasics,
     IconLoading,
-    IconSvg,
   },
   props: {
     buttonSize: {
