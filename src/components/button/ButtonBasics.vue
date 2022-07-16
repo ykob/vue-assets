@@ -3,7 +3,7 @@
     class="flex items-center justify-center"
     :class="classnames"
     :is="tag"
-    @click="handleClick"
+    @click="onClick"
   >
     <span
       v-if="loading === true"
@@ -63,7 +63,7 @@ export default defineComponent({
     },
   },
   methods: {
-    handleClick() {
+    onClick() {
       if (this.loading === true) return
       this.$emit('accepted')
     },
