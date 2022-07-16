@@ -2,7 +2,7 @@
   <button-basics
     :class="classnames"
     :icon="icon"
-    :icon-size="buttonSize"
+    :icon-size="iconSize"
     :loading="loading"
     :tag="tag"
     @click="$emit('accepted')"
@@ -14,7 +14,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
-import { ButtonSize, Semantics } from '@/types/'
+import { ButtonSize, IconSize, Semantics } from '@/types/'
 
 export default defineComponent({
   name: 'ButtonTransparent',
@@ -141,7 +141,7 @@ export default defineComponent({
         'hover:text-neutral-50',
       ]
     },
-    iconSize(): string {
+    iconSize(): IconSize {
       switch (this.buttonSize) {
         case 's':
           return 'xs'

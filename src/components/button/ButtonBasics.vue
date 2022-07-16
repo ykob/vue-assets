@@ -19,9 +19,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import IconLoading from '@/components/icon/IconLoading.vue'
 import IconSvg from '@/components/icon/IconSvg.vue'
+import { IconSize } from '@/types/'
 
 export default defineComponent({
   name: 'ButtonBasics',
@@ -36,7 +37,7 @@ export default defineComponent({
       default: undefined,
     },
     iconSize: {
-      type: String,
+      type: String as PropType<IconSize>,
       default: 'm',
     },
     loading: {
@@ -57,7 +58,7 @@ export default defineComponent({
       }
     },
     classnamesInner(): string[] {
-      const classnamesBase = ['flex', 'gap-2', 'items-center']
+      const classnamesBase = ['flex', 'gap-1', 'items-center']
       return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
     },
   },
