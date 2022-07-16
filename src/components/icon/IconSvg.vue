@@ -11,7 +11,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+import { IconSize } from '@/types/'
 
 export default defineComponent({
   name: 'IconSvg',
@@ -21,7 +22,7 @@ export default defineComponent({
       default: '',
     },
     size: {
-      type: String,
+      type: String as PropType<IconSize>,
       default: 'm',
     },
   },

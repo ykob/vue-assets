@@ -1,39 +1,26 @@
 <template>
   <button-basics
     :class="classnames"
+    :icon="icon"
+    :icon-size="iconSize"
     :loading="loading"
     :tag="tag"
     @click="$emit('accepted')"
   >
-    <span
-      v-if="loading === true"
-      class="absolute flex h-full items-center justify-center left-0 top-0 w-full"
-    >
-      <icon-loading :size="iconSize" />
-    </span>
-    <span :class="classnamesInner">
-      <icon-svg v-if="icon !== undefined" :d="icon" :size="iconSize" />
-      <slot></slot>
-    </span>
+    <slot></slot>
   </button-basics>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
-import IconLoading from '@/components/icon/IconLoading.vue'
-import IconSvg from '@/components/icon/IconSvg.vue'
-import { Semantics } from '@/types/'
-
-type ButtonSize = 's' | 'm' | 'l'
+import { ButtonSize, IconSize, Semantics } from '@/types/'
 
 export default defineComponent({
   name: 'ButtonTransparent',
   emits: ['accepted'],
   components: {
     ButtonBasics,
-    IconLoading,
-    IconSvg,
   },
   props: {
     buttonSize: {
@@ -154,11 +141,7 @@ export default defineComponent({
         'hover:text-neutral-50',
       ]
     },
-    classnamesInner(): string[] {
-      const classnamesBase = ['flex', 'gap-1', 'items-center']
-      return this.loading ? [...classnamesBase, 'opacity-0'] : classnamesBase
-    },
-    iconSize(): string {
+    iconSize(): IconSize {
       switch (this.buttonSize) {
         case 's':
           return 'xs'
