@@ -1,3 +1,5 @@
+export type ButtonSize = 's' | 'm' | 'l'
+
 export type Semantics =
   | 'primary'
   | 'secondary'

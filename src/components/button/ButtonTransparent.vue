@@ -14,9 +14,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import ButtonBasics from '@/components/button/ButtonBasics.vue'
-import { Semantics } from '@/types/'
-
-type ButtonSize = 's' | 'm' | 'l'
+import { ButtonSize, Semantics } from '@/types/'
 
 export default defineComponent({
   name: 'ButtonTransparent',
