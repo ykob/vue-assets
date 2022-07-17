@@ -103,7 +103,7 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">File</h2>
   <div class="flex gap-4 mb-4">
-    <InputFile v-model="inputFile" />
+    <InputFile v-model="inputFile" key-prefix="input-file" />
   </div>
 </template>
 

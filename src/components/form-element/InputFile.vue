@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :key="keyPrefix">
     <input
       class="hidden"
       ref="input"
@@ -30,6 +30,10 @@ export default defineComponent({
     error: {
       type: Boolean,
       default: false,
+    },
+    keyPrefix: {
+      type: String,
+      required: true,
     },
     modelValue: {
       type: String,
