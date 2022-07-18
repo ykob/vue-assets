@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-2 items-baseline" :key="keyPrefix">
+  <div class="flex flex-col gap-4 items-baseline" :key="keyPrefix">
     <input
       class="hidden"
       ref="input"
@@ -9,11 +9,17 @@
       @change="changeHandler"
     />
     <div class="flex gap-2">
-      <button-block :icon="icons.file" shrink @click="onClickSelect">
+      <button-block
+        button-type="information"
+        :icon="icons.file"
+        shrink
+        @click="onClickSelect"
+      >
         Select Files
       </button-block>
       <button-block
         v-if="selectedFiles"
+        button-type="destructive"
         :icon="icons.close"
         shrink
         @click="onClickClear"
@@ -21,7 +27,9 @@
         Clear
       </button-block>
     </div>
-    <div class="bg-information-100 px-4 py-2 rounded">
+    <div
+      class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
+    >
       <template v-if="!selectedFiles">No files are selected.</template>
       <template v-else>
         <div v-for="(file, index) in fileList" :key="keyPrefix + '-' + index">
