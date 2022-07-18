@@ -5,6 +5,7 @@
       ref="input"
       type="file"
       :disabled="disabled"
+      :multiple="multiple"
       :value="modelValue"
       @change="changeHandler"
     />
@@ -68,6 +69,10 @@ export default defineComponent({
     modelValue: {
       type: String,
       default: '',
+    },
+    multiple: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
