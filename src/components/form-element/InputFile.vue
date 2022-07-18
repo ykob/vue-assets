@@ -1,5 +1,5 @@
 <template>
-  <div :key="keyPrefix">
+  <div class="flex flex-col gap-2 items-baseline" :key="keyPrefix">
     <input
       class="hidden"
       ref="input"
@@ -8,17 +8,27 @@
       :value="modelValue"
       @change="changeHandler"
     />
-    <button-block
-      v-if="fileList === null"
-      :icon="icons.file"
-      shrink
-      @click="onClickSelect"
-    >
-      Select Files
-    </button-block>
-    <button-block v-else :icon="icons.close" shrink @click="onClickClear">
-      Clear
-    </button-block>
+    <div class="flex gap-2">
+      <button-block :icon="icons.file" shrink @click="onClickSelect">
+        Select Files
+      </button-block>
+      <button-block
+        v-if="selectedFiles"
+        :icon="icons.close"
+        shrink
+        @click="onClickClear"
+      >
+        Clear
+      </button-block>
+    </div>
+    <div class="bg-information-100 px-4 py-2 rounded">
+      <template v-if="!selectedFiles">No files are selected.</template>
+      <template v-else>
+        <div v-for="(file, index) in fileList" :key="keyPrefix + '-' + index">
+          {{ file.name }}
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -46,6 +56,11 @@ export default defineComponent({
     modelValue: {
       type: String,
       default: '',
+    },
+  },
+  computed: {
+    selectedFiles(): boolean {
+      return this.fileList !== null && this.fileList.length > 0
     },
   },
   data: (): {
