@@ -8,15 +8,23 @@
       :value="modelValue"
       @change="changeHandler"
     />
-    <button-block :icon="d" shrink @click="clickHandler">
+    <button-block
+      v-if="fileList === null"
+      :icon="icons.file"
+      shrink
+      @click="onClickSelect"
+    >
       Select Files
+    </button-block>
+    <button-block v-else :icon="icons.close" shrink @click="onClickClear">
+      Clear
     </button-block>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { mdiFile } from '@mdi/js'
+import { mdiCloseCircle, mdiFile } from '@mdi/js'
 import ButtonBlock from '../button/ButtonBlock.vue'
 
 export default defineComponent({
@@ -41,10 +49,13 @@ export default defineComponent({
     },
   },
   data: (): {
-    d: string
+    icons: { [key: string]: string }
     fileList: FileList | null
   } => ({
-    d: mdiFile,
+    icons: {
+      file: mdiFile,
+      close: mdiCloseCircle,
+    },
     fileList: null,
   }),
   methods: {
@@ -54,10 +65,14 @@ export default defineComponent({
       this.fileList = target.files
       this.$emit('update:modelValue', target.value)
     },
-    clickHandler() {
+    onClickSelect() {
       const { input } = this.$refs
       if (!(input instanceof HTMLInputElement)) return
       input.click()
+    },
+    onClickClear() {
+      this.fileList = null
+      this.$emit('update:modelValue', '')
     },
   },
 })
