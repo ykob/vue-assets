@@ -38,7 +38,7 @@
       class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
     >
       <div v-for="(file, index) in fileList" :key="keyPrefix + '-' + index">
-        {{ file.name }}
+        {{ file.name }} ({{ file.size / 1000 }}kB)
       </div>
     </div>
   </div>
