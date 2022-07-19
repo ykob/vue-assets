@@ -103,7 +103,11 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">File</h2>
   <div class="flex gap-4 mb-4">
-    <InputFile v-model="inputFile" key-prefix="input-file" multiple />
+    <input-file v-model="inputFile" key-prefix="input-file" multiple />
+  </div>
+  <h2 class="mt-12 mb-4 text-3xl">Image</h2>
+  <div class="flex gap-4 mb-4">
+    <input-image v-model="inputImage" key-prefix="input-file" multiple />
   </div>
 </template>
 
@@ -112,6 +116,7 @@ import { defineComponent } from 'vue'
 import CheckboxAll from '@/components/form-element/CheckboxAll.vue'
 import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
 import InputFile from '@/components/form-element/InputFile.vue'
+import InputImage from '@/components/form-element/InputImage.vue'
 import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
 import InputText from '@/components/form-element/InputText.vue'
 import RadioButton from '@/components/form-element/RadioButton.vue'
@@ -123,12 +128,25 @@ export default defineComponent({
     CheckboxAll,
     CheckboxSingle,
     InputFile,
+    InputImage,
     InputMultilineText,
     InputText,
     RadioButton,
     ToggleSwitch,
   },
-  data: () => ({
+  data: (): {
+    checkArray: boolean[]
+    checkBool: boolean
+    inputText: string
+    inputMultilineText: string
+    radioValue: string
+    toggleSwitchValue1: boolean
+    toggleSwitchValue2: boolean
+    toggleSwitchValueDisabled1: boolean
+    toggleSwitchValueDisabled2: boolean
+    inputFile: FileList | null
+    inputImage: FileList | null
+  } => ({
     checkArray: [],
     checkBool: false,
     inputText: '',
@@ -138,7 +156,8 @@ export default defineComponent({
     toggleSwitchValue2: false,
     toggleSwitchValueDisabled1: false,
     toggleSwitchValueDisabled2: true,
-    inputFile: '',
+    inputFile: null,
+    inputImage: null,
   }),
 })
 </script>
