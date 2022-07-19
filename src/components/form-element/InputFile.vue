@@ -2,11 +2,10 @@
   <div class="flex flex-col gap-3 items-baseline" :key="keyPrefix">
     <input
       class="hidden"
-      ref="input"
-      type="file"
       :disabled="disabled"
       :multiple="multiple"
-      :value="modelValue"
+      ref="input"
+      type="file"
       @change="changeHandler"
     />
     <div class="flex gap-2">
@@ -38,7 +37,7 @@
       v-else
       class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
     >
-      <div v-for="(file, index) in fileList" :key="keyPrefix + '-' + index">
+      <div v-for="(file, index) in modelValue" :key="keyPrefix + '-' + index">
         {{ file.name }} ({{ file.size / 1000 }}kB)
       </div>
     </div>
@@ -46,7 +45,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { mdiCloseCircle, mdiFile } from '@mdi/js'
 import ButtonBlock from '../button/ButtonBlock.vue'
 
@@ -67,8 +66,8 @@ export default defineComponent({
       required: true,
     },
     modelValue: {
-      type: String,
-      default: '',
+      type: Object as PropType<FileList | null>,
+      default: null,
     },
     multiple: {
       type: Boolean,
@@ -77,25 +76,22 @@ export default defineComponent({
   },
   computed: {
     selectedFiles(): boolean {
-      return this.fileList !== null && this.fileList.length > 0
+      return this.modelValue !== null && this.modelValue.length > 0
     },
   },
   data: (): {
     icons: { [key: string]: string }
-    fileList: FileList | null
   } => ({
     icons: {
       file: mdiFile,
       close: mdiCloseCircle,
     },
-    fileList: null,
   }),
   methods: {
     changeHandler(event: Event): void {
       const { target } = event
       if (!(target instanceof HTMLInputElement)) return
-      this.fileList = target.files
-      this.$emit('update:modelValue', target.value)
+      this.$emit('update:modelValue', target.files)
     },
     onClickSelect() {
       const { input } = this.$refs
@@ -103,8 +99,7 @@ export default defineComponent({
       input.click()
     },
     onClickClear() {
-      this.fileList = null
-      this.$emit('update:modelValue', '')
+      this.$emit('update:modelValue', null)
     },
   },
 })
