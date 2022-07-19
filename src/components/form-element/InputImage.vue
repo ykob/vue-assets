@@ -34,12 +34,13 @@
     >
       No Images are selected.
     </div>
-    <div
-      v-else
-      class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
-    >
-      <div v-for="(file, index) in modelValue" :key="keyPrefix + '-' + index">
-        {{ file.name }} ({{ file.size / 1000 }}kB)
+    <div v-else class="flex flex-wrap gap-4">
+      <div
+        v-for="(image, index) in images"
+        class="bg-neutral-100 h-40 rounded w-40"
+        :key="keyPrefix + '-' + index"
+      >
+        <img class="block h-full object-contain w-full" alt="" :src="image" />
       </div>
     </div>
   </div>
@@ -78,6 +79,17 @@ export default defineComponent({
   computed: {
     selectedFiles(): boolean {
       return this.modelValue !== null && this.modelValue.length > 0
+    },
+    images(): string[] {
+      if (this.modelValue === null) {
+        return []
+      } else {
+        const images = []
+        for (let i = 0; i < this.modelValue.length; i++) {
+          images.push(URL.createObjectURL(this.modelValue[i]))
+        }
+        return images
+      }
     },
   },
   data: (): {
