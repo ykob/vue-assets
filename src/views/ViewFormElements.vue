@@ -107,7 +107,7 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Image</h2>
   <div class="flex gap-4 mb-4">
-    <input-image v-model="inputImage" key-prefix="input-file" multiple />
+    <input-image v-model="inputImage" key-prefix="input-image" multiple />
   </div>
 </template>
 
