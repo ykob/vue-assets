@@ -37,10 +37,14 @@
     <div v-else class="flex flex-wrap gap-4">
       <div
         v-for="(image, index) in images"
-        class="bg-neutral-100 h-40 rounded w-40"
+        class="bg-neutral-100 flex h-40 justify-center items-center overflow-hidden rounded shadow w-40"
         :key="keyPrefix + '-' + index"
       >
-        <img class="block h-full object-contain w-full" alt="" :src="image" />
+        <img
+          class="block h-max-full object-contain w-max-full"
+          alt=""
+          :src="image"
+        />
       </div>
     </div>
   </div>
