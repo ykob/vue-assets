@@ -53,7 +53,7 @@ import ButtonBlock from '../button/ButtonBlock.vue'
 
 export default defineComponent({
   components: { ButtonBlock },
-  name: 'InputFile',
+  name: 'InputImage',
   props: {
     disabled: {
       type: Boolean,
