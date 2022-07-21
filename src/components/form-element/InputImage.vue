@@ -2,6 +2,7 @@
   <div class="flex flex-col gap-3 items-baseline" :key="keyPrefix">
     <input
       class="hidden"
+      accept="image/png, image/jpeg"
       :disabled="disabled"
       :multiple="multiple"
       ref="input"
@@ -11,11 +12,11 @@
     <div class="flex gap-2">
       <button-block
         button-type="information"
-        :icon="icons.file"
+        :icon="icons.image"
         shrink
         @click="onClickSelect"
       >
-        Select Files
+        Select Images
       </button-block>
       <button-block
         v-if="selectedFiles"
@@ -31,14 +32,19 @@
       v-if="!selectedFiles"
       class="bg-neutral-100 border-2 border-dashed border-neutral-400 px-4 py-2 rounded"
     >
-      No files are selected.
+      No Images are selected.
     </div>
-    <div
-      v-else
-      class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
-    >
-      <div v-for="(file, index) in modelValue" :key="keyPrefix + '-' + index">
-        {{ file.name }} ({{ file.size / 1000 }}kB)
+    <div v-else class="flex flex-wrap gap-4">
+      <div
+        v-for="(image, index) in images"
+        class="bg-neutral-100 flex h-40 justify-center items-center overflow-hidden rounded shadow w-40"
+        :key="keyPrefix + '-' + index"
+      >
+        <img
+          class="block h-max-full object-contain w-max-full"
+          alt=""
+          :src="image"
+        />
       </div>
     </div>
   </div>
@@ -46,12 +52,12 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { mdiCloseCircle, mdiFile } from '@mdi/js'
+import { mdiCloseCircle, mdiImage } from '@mdi/js'
 import ButtonBlock from '../button/ButtonBlock.vue'
 
 export default defineComponent({
   components: { ButtonBlock },
-  name: 'InputFile',
+  name: 'InputImage',
   props: {
     disabled: {
       type: Boolean,
@@ -78,12 +84,23 @@ export default defineComponent({
     selectedFiles(): boolean {
       return this.modelValue !== null && this.modelValue.length > 0
     },
+    images(): string[] {
+      if (this.modelValue === null) {
+        return []
+      } else {
+        const images = []
+        for (let i = 0; i < this.modelValue.length; i++) {
+          images.push(URL.createObjectURL(this.modelValue[i]))
+        }
+        return images
+      }
+    },
   },
   data: (): {
     icons: { [key: string]: string }
   } => ({
     icons: {
-      file: mdiFile,
+      image: mdiImage,
       close: mdiCloseCircle,
     },
   }),
