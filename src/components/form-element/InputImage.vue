@@ -12,6 +12,7 @@
     <div class="flex gap-2">
       <button-block
         button-type="information"
+        :disabled="disabled"
         :icon="icons.image"
         shrink
         @click="onClickSelect"
@@ -21,6 +22,7 @@
       <button-block
         v-if="selectedFiles"
         button-type="destructive"
+        :disabled="disabled"
         :icon="icons.close"
         shrink
         @click="onClickClear"
