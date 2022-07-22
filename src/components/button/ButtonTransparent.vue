@@ -1,6 +1,7 @@
 <template>
   <button-basics
     :class="classnames"
+    :disabled="disabled"
     :icon="icon"
     :icon-size="iconSize"
     :loading="loading"
@@ -35,6 +36,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: String || undefined,
       default: undefined,
@@ -54,7 +59,13 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      const colorClassnames = (buttonType: Semantics): string[] => {
+      const colorClassnames = (
+        buttonType: Semantics,
+        disabled: boolean
+      ): string[] => {
+        if (disabled === true) {
+          return ['text-neutral-300']
+        }
         switch (buttonType) {
           case 'primary':
           default:
@@ -132,7 +143,7 @@ export default defineComponent({
       }
 
       return [
-        ...colorClassnames(this.buttonType),
+        ...colorClassnames(this.buttonType, this.disabled),
         ...sizeClassnames(this.buttonSize),
         this.circle ? 'rounded-full' : 'rounded',
         'font-medium',
