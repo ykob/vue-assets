@@ -38,6 +38,33 @@
       Button
     </button-block>
   </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <button-block buttonType="primary" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="secondary" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="information" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="attention" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="success" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="destructive" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="error" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+    <button-block buttonType="warning" disabled :icon="icon.mdiGithub">
+      Button
+    </button-block>
+  </div>
   <h3 class="mb-4 text-xl">Sizes</h3>
   <div class="flex gap-4 mb-4">
     <button-block buttonSize="s" :icon="icon.mdiGithub">
@@ -193,6 +220,33 @@
       Button
     </button-outline>
     <button-outline buttonType="warning" :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+  </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <button-outline buttonType="primary" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="secondary" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="information" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="attention" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="success" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="destructive" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="error" disabled :icon="icon.mdiGithub">
+      Button
+    </button-outline>
+    <button-outline buttonType="warning" disabled :icon="icon.mdiGithub">
       Button
     </button-outline>
   </div>
@@ -363,6 +417,61 @@
       Button
     </button-transparent>
     <button-transparent buttonType="warning" :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+  </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <button-transparent
+      buttonType="primary"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
+      Button
+    </button-transparent>
+    <button-transparent
+      buttonType="secondary"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
+      Button
+    </button-transparent>
+    <button-transparent
+      buttonType="information"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
+      Button
+    </button-transparent>
+    <button-transparent
+      buttonType="attention"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
+      Button
+    </button-transparent>
+    <button-transparent
+      buttonType="success"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
+      Button
+    </button-transparent>
+    <button-transparent
+      buttonType="destructive"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
+      Button
+    </button-transparent>
+    <button-transparent buttonType="error" disabled :icon="icon.mdiArrowRight">
+      Button
+    </button-transparent>
+    <button-transparent
+      buttonType="warning"
+      disabled
+      :icon="icon.mdiArrowRight"
+    >
       Button
     </button-transparent>
   </div>
