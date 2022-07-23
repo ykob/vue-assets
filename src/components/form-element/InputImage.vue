@@ -30,25 +30,27 @@
         Clear
       </button-block>
     </div>
-    <div
-      v-if="!selectedFiles"
-      class="bg-neutral-100 border-2 border-dashed border-neutral-400 px-4 py-2 rounded"
-    >
-      No Images are selected.
-    </div>
-    <div v-else class="flex flex-wrap gap-4">
+    <template v-if="!disabled">
       <div
-        v-for="(image, index) in images"
-        class="bg-neutral-100 flex h-40 justify-center items-center overflow-hidden rounded shadow w-40"
-        :key="keyPrefix + '-' + index"
+        v-if="!selectedFiles"
+        class="bg-neutral-100 border-2 border-dashed border-neutral-400 px-4 py-2 rounded"
       >
-        <img
-          class="block h-max-full object-contain w-max-full"
-          alt=""
-          :src="image"
-        />
+        No Images are selected.
       </div>
-    </div>
+      <div v-else class="flex flex-wrap gap-4">
+        <div
+          v-for="(image, index) in images"
+          class="bg-neutral-100 flex h-40 justify-center items-center overflow-hidden rounded shadow w-40"
+          :key="keyPrefix + '-' + index"
+        >
+          <img
+            class="block h-max-full object-contain w-max-full"
+            alt=""
+            :src="image"
+          />
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
