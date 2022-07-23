@@ -146,10 +146,10 @@ export default defineComponent({
         ...colorClassnames(this.buttonType, this.disabled),
         ...sizeClassnames(this.buttonSize),
         this.circle ? 'rounded-full' : 'rounded',
+        this.disabled ? 'pointer-events-none' : 'hover:text-neutral-50',
         'font-medium',
         'relative',
         'transition-colors',
-        'hover:text-neutral-50',
       ]
     },
     iconSize(): IconSize {
