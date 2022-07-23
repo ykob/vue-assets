@@ -36,10 +36,7 @@
       >
         No files are selected.
       </div>
-      <div
-        v-else
-        class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
-      >
+      <div v-else :class="classnamesMessage">
         <div v-for="(file, index) in modelValue" :key="keyPrefix + '-' + index">
           {{ file.name }} ({{ file.size / 1000 }}kB)
         </div>
@@ -79,6 +76,24 @@ export default defineComponent({
     },
   },
   computed: {
+    classnamesMessage(): string[] {
+      const colorClassnames = (error: boolean): string[] => {
+        if (error === true) {
+          return ['bg-error-50', 'border-error-500']
+        } else {
+          return ['bg-information-50', 'border-information-300']
+        }
+      }
+
+      return [
+        ...colorClassnames(this.error),
+        'border-2',
+        'border-dashed',
+        'px-4',
+        'py-2',
+        'rounded',
+      ]
+    },
     selectedFiles(): boolean {
       return this.modelValue !== null && this.modelValue.length > 0
     },

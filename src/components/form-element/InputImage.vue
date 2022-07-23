@@ -40,7 +40,7 @@
       <div v-else class="flex flex-wrap gap-4">
         <div
           v-for="(image, index) in images"
-          class="bg-neutral-100 flex h-40 justify-center items-center overflow-hidden rounded shadow w-40"
+          :class="classnamesSelected"
           :key="keyPrefix + '-' + index"
         >
           <img
@@ -85,6 +85,31 @@ export default defineComponent({
     },
   },
   computed: {
+    classnamesSelected(): string[] {
+      const colorClassnames = (error: boolean): string[] => {
+        if (error === true) {
+          return [
+            'bg-error-100',
+            'border-2',
+            'border-dashed',
+            'border-error-500',
+          ]
+        } else {
+          return ['bg-neutral-100']
+        }
+      }
+
+      return [
+        ...colorClassnames(this.error),
+        'flex',
+        'h-40',
+        'justify-center',
+        'items-center',
+        'overflow-hidden',
+        'rounded',
+        'shadow w-40',
+      ]
+    },
     selectedFiles(): boolean {
       return this.modelValue !== null && this.modelValue.length > 0
     },
