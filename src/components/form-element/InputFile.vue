@@ -11,6 +11,7 @@
     <div class="flex gap-2">
       <button-block
         button-type="information"
+        :disabled="disabled"
         :icon="icons.file"
         shrink
         @click="onClickSelect"
@@ -20,6 +21,7 @@
       <button-block
         v-if="selectedFiles"
         button-type="destructive"
+        :disabled="disabled"
         :icon="icons.close"
         shrink
         @click="onClickClear"
@@ -27,20 +29,19 @@
         Clear
       </button-block>
     </div>
-    <div
-      v-if="!selectedFiles"
-      class="bg-neutral-100 border-2 border-dashed border-neutral-400 px-4 py-2 rounded"
-    >
-      No files are selected.
-    </div>
-    <div
-      v-else
-      class="bg-information-50 border-2 border-dashed border-information-300 px-4 py-2 rounded"
-    >
-      <div v-for="(file, index) in modelValue" :key="keyPrefix + '-' + index">
-        {{ file.name }} ({{ file.size / 1000 }}kB)
+    <template v-if="!disabled">
+      <div
+        v-if="!selectedFiles"
+        class="bg-neutral-100 border-2 border-dashed border-neutral-400 px-4 py-2 rounded"
+      >
+        No files are selected.
       </div>
-    </div>
+      <div v-else :class="classnamesMessage">
+        <div v-for="(file, index) in modelValue" :key="keyPrefix + '-' + index">
+          {{ file.name }} ({{ file.size / 1000 }}kB)
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -75,6 +76,24 @@ export default defineComponent({
     },
   },
   computed: {
+    classnamesMessage(): string[] {
+      const colorClassnames = (error: boolean): string[] => {
+        if (error === true) {
+          return ['bg-error-50', 'border-error-500']
+        } else {
+          return ['bg-information-50', 'border-information-300']
+        }
+      }
+
+      return [
+        ...colorClassnames(this.error),
+        'border-2',
+        'border-dashed',
+        'px-4',
+        'py-2',
+        'rounded',
+      ]
+    },
     selectedFiles(): boolean {
       return this.modelValue !== null && this.modelValue.length > 0
     },

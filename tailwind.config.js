@@ -15,6 +15,7 @@ module.exports = {
       destructive: colors.rose,
       error: colors.red,
       warning: colors.amber,
+      white: colors.white,
     },
     extend: {},
   },

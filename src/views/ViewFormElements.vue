@@ -105,9 +105,45 @@
   <div class="flex gap-4 mb-4">
     <input-file v-model="inputFile" key-prefix="input-file" multiple />
   </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <input-file
+      v-model="inputFile"
+      disabled
+      key-prefix="input-file-disabled"
+      multiple
+    />
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <input-file
+      v-model="inputFile"
+      error
+      key-prefix="input-file-disabled"
+      multiple
+    />
+  </div>
   <h2 class="mt-12 mb-4 text-3xl">Image</h2>
   <div class="flex gap-4 mb-4">
     <input-image v-model="inputImage" key-prefix="input-image" multiple />
+  </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <input-image
+      v-model="inputImage"
+      disabled
+      key-prefix="input-image-disabled"
+      multiple
+    />
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <input-image
+      v-model="inputImage"
+      error
+      key-prefix="input-image-disabled"
+      multiple
+    />
   </div>
 </template>
 
