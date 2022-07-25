@@ -3,8 +3,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { mdiLoading } from '@mdi/js'
+import { IconSize } from '@/types/'
 import IconSvg from '@/components/icon/IconSvg.vue'
 
 export default defineComponent({
@@ -12,7 +13,12 @@ export default defineComponent({
   components: {
     IconSvg,
   },
-  props: {},
+  props: {
+    size: {
+      type: String as PropType<IconSize>,
+      default: 'm',
+    },
+  },
   data: () => ({
     d: mdiLoading,
   }),
