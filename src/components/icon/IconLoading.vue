@@ -1,5 +1,5 @@
 <template>
-  <icon-svg :d="d" class="animate-spin text-current" />
+  <icon-svg class="animate-spin text-current" :d="d" :size="size" />
 </template>
 
 <script lang="ts">
