@@ -147,7 +147,14 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Slider</h2>
   <div class="flex gap-4 mb-4">
-    <input-slider v-model="inputSlider" showValue />
+    <input-slider v-model="inputSlider1" showValue />
+    <input-slider
+      v-model="inputSlider2"
+      :max="100"
+      :min="0"
+      showValue
+      :step="1"
+    />
   </div>
 </template>
 
@@ -182,7 +189,8 @@ export default defineComponent({
     inputFile: FileList | null
     inputImage: FileList | null
     inputMultilineText: string
-    inputSlider: number
+    inputSlider1: number
+    inputSlider2: number
     inputText: string
     radioValue: string
     toggleSwitchValue1: boolean
@@ -195,7 +203,8 @@ export default defineComponent({
     inputFile: null,
     inputImage: null,
     inputMultilineText: '',
-    inputSlider: 0,
+    inputSlider1: 0,
+    inputSlider2: 0,
     inputText: '',
     radioValue: '',
     toggleSwitchValue1: false,
