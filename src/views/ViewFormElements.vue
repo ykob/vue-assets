@@ -145,6 +145,10 @@
       multiple
     />
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Slider</h2>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider" showValue />
+  </div>
 </template>
 
 <script lang="ts">
@@ -154,6 +158,7 @@ import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
 import InputFile from '@/components/form-element/InputFile.vue'
 import InputImage from '@/components/form-element/InputImage.vue'
 import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
+import InputSlider from '@/components/form-element/InputSlider.vue'
 import InputText from '@/components/form-element/InputText.vue'
 import RadioButton from '@/components/form-element/RadioButton.vue'
 import ToggleSwitch from '@/components/form-element/ToggleSwitch.vue'
@@ -166,6 +171,7 @@ export default defineComponent({
     InputFile,
     InputImage,
     InputMultilineText,
+    InputSlider,
     InputText,
     RadioButton,
     ToggleSwitch,
@@ -173,27 +179,29 @@ export default defineComponent({
   data: (): {
     checkArray: boolean[]
     checkBool: boolean
-    inputText: string
+    inputFile: FileList | null
+    inputImage: FileList | null
     inputMultilineText: string
+    inputSlider: number
+    inputText: string
     radioValue: string
     toggleSwitchValue1: boolean
     toggleSwitchValue2: boolean
     toggleSwitchValueDisabled1: boolean
     toggleSwitchValueDisabled2: boolean
-    inputFile: FileList | null
-    inputImage: FileList | null
   } => ({
     checkArray: [],
     checkBool: false,
-    inputText: '',
+    inputFile: null,
+    inputImage: null,
     inputMultilineText: '',
+    inputSlider: 0,
+    inputText: '',
     radioValue: '',
     toggleSwitchValue1: false,
     toggleSwitchValue2: false,
     toggleSwitchValueDisabled1: false,
     toggleSwitchValueDisabled2: true,
-    inputFile: null,
-    inputImage: null,
   }),
 })
 </script>
