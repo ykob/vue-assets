@@ -97,17 +97,7 @@ export default defineComponent({
         Math.min(step * (this.max - this.min) + this.min, this.max),
         this.min
       )
-      const valueRoundStep =
-        Math.round(valueRoundMinMax / this.step) * this.step
-      const stepFloatLength = String(this.step).split('.')[1]
-      const value =
-        stepFloatLength === undefined
-          ? valueRoundStep
-          : Math.round(valueRoundStep * parseFloat(stepFloatLength) * 10) /
-            parseFloat(stepFloatLength) /
-            10
-
-      return value
+      return Math.round(valueRoundMinMax / this.step) * this.step
     },
     onMouseDown(e: MouseEvent) {
       this.setSize()
