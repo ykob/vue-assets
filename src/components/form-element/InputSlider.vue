@@ -2,13 +2,13 @@
   <div class="flex items-center w-full">
     <div
       v-if="showValue"
-      class="mr-3 shrink-0 text-ellipsis text-right"
+      class="mr-2 shrink-0 text-ellipsis text-right"
       :style="stylesValue"
     >
-      {{ modelValue }}
+      {{ value }}
     </div>
     <div
-      class="flex h-6 items-center relative w-full z-0"
+      class="flex h-6 items-center mx-3 relative w-full z-0"
       ref="main"
       @mousedown.prevent="onMouseDown"
       @touchstart.prevent="onTouchStart"
@@ -17,9 +17,7 @@
         class="absolute bg-primary-500 cursor-pointer drop-shadow h-5 rounded-full w-5 z-10"
         :style="stylesKnob"
       ></div>
-      <div
-        class="bg-neutral-200 h-1 relative mr-3 ml-3 rounded-full w-full z-0"
-      >
+      <div class="bg-neutral-200 h-1 relative rounded-full w-full z-0">
         <div class="absolute bg-primary-200 h-full" :style="stylesLine"></div>
       </div>
     </div>
@@ -67,7 +65,7 @@ export default defineComponent({
     },
     stylesKnob(): { [key: string]: string } {
       return {
-        left: `calc(${this.ratio * 100}% - ${24 * this.ratio}px)`,
+        left: `calc(${this.ratio * 100}% - 10px)`,
         top: 'calc(50% - 10px)',
       }
     },
