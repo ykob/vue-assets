@@ -153,7 +153,14 @@
       :max="100"
       :min="0"
       showValue
-      :step="1"
+      :step="2"
+    />
+    <input-slider
+      v-model="inputSlider3"
+      :max="20"
+      :min="0"
+      showValue
+      :step="1.25"
     />
   </div>
 </template>
@@ -191,6 +198,7 @@ export default defineComponent({
     inputMultilineText: string
     inputSlider1: number
     inputSlider2: number
+    inputSlider3: number
     inputText: string
     radioValue: string
     toggleSwitchValue1: boolean
@@ -205,6 +213,7 @@ export default defineComponent({
     inputMultilineText: '',
     inputSlider1: 0,
     inputSlider2: 0,
+    inputSlider3: 0,
     inputText: '',
     radioValue: '',
     toggleSwitchValue1: false,
