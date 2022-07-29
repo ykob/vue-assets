@@ -77,8 +77,12 @@ export default defineComponent({
       }
     },
     stylesValue(): { [key: string]: string } {
+      const int = String(this.max)
+      const float = String(this.step).split('.')[1]
       return {
-        width: `${String(this.max).length / 2}em`,
+        width: `${
+          (float ? int.length + float.length : int.length) / 2 + 0.5
+        }em`,
       }
     },
   },
