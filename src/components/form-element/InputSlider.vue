@@ -85,6 +85,12 @@ export default defineComponent({
         }em`,
       }
     },
+    value(): string {
+      const float = String(this.step).split('.')[1]
+      return float
+        ? this.modelValue.toFixed(float.length)
+        : String(this.modelValue)
+    },
   },
   methods: {
     calcValue(x: number): number {
