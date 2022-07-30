@@ -147,6 +147,12 @@
   </div>
   <h2 class="mt-12 mb-4 text-3xl">Slider</h2>
   <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" />
+    <input-slider v-model="inputSlider2" :max="100" :min="0" :step="2" />
+    <input-slider v-model="inputSlider3" :max="20" :min="0" :step="1.25" />
+  </div>
+  <h3 class="mb-4 text-xl">Show Value</h3>
+  <div class="flex gap-4 mb-4">
     <input-slider v-model="inputSlider1" showValue />
     <input-slider
       v-model="inputSlider2"
