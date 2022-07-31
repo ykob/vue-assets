@@ -59,10 +59,17 @@ export default defineComponent({
   }),
   computed: {
     classnamesKnob(): string[] {
+      let classnamesColors: string[] = []
+
+      if (this.disabled === true) {
+        classnamesColors = ['bg-neutral-400']
+      } else {
+        classnamesColors = ['bg-primary-500']
+      }
       return [
+        ...classnamesColors,
+        this.disabled === true ? '' : 'cursor-pointer',
         'absolute',
-        'bg-primary-500',
-        'cursor-pointer',
         'drop-shadow',
         'h-5',
         'rounded-full',
@@ -71,7 +78,14 @@ export default defineComponent({
       ]
     },
     classnamesLine(): string[] {
-      return ['absolute', 'bg-primary-200', 'h-full']
+      let classnamesColors: string[] = []
+
+      if (this.disabled === true) {
+        classnamesColors = ['bg-neutral-300']
+      } else {
+        classnamesColors = ['bg-primary-200']
+      }
+      return [...classnamesColors, 'absolute', 'h-full']
     },
     ratio(): number {
       return Math.max(
