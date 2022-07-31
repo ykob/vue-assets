@@ -169,6 +169,26 @@
       :step="1.25"
     />
   </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" disabled showValue />
+    <input-slider
+      v-model="inputSlider2"
+      disabled
+      :max="100"
+      :min="0"
+      showValue
+      :step="2"
+    />
+    <input-slider
+      v-model="inputSlider3"
+      disabled
+      :max="20"
+      :min="0"
+      showValue
+      :step="1.25"
+    />
+  </div>
 </template>
 
 <script lang="ts">
