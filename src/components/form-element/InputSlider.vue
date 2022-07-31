@@ -31,6 +31,10 @@ export default defineComponent({
   name: 'InputSlider',
   emits: ['update:modelValue'],
   props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     modelValue: {
       type: Number,
       default: 0,
@@ -100,6 +104,7 @@ export default defineComponent({
       return Math.round(valueRoundMinMax / this.step) * this.step
     },
     onMouseDown(e: MouseEvent) {
+      if (this.disabled === true) return
       this.setSize()
       this.$emit('update:modelValue', this.calcValue(e.pageX))
       window.addEventListener('mousemove', this.onMouseMove)
@@ -120,6 +125,7 @@ export default defineComponent({
       this.$emit('update:modelValue', this.calcValue(e.touches[0].pageX))
     },
     onTouchStart(e: TouchEvent) {
+      if (this.disabled === true) return
       this.setSize()
       this.$emit('update:modelValue', this.calcValue(e.touches[0].pageX))
       window.addEventListener('touchmove', this.onTouchMove)
