@@ -13,12 +13,9 @@
       @mousedown.prevent="onMouseDown"
       @touchstart.prevent="onTouchStart"
     >
-      <div
-        class="absolute bg-primary-500 cursor-pointer drop-shadow h-5 rounded-full w-5 z-10"
-        :style="stylesKnob"
-      ></div>
+      <div :class="classnamesKnob" :style="stylesKnob"></div>
       <div class="bg-neutral-200 h-1 relative rounded-full w-full z-0">
-        <div class="absolute bg-primary-200 h-full" :style="stylesLine"></div>
+        <div :class="classnamesLine" :style="stylesLine"></div>
       </div>
     </div>
   </div>
@@ -61,6 +58,21 @@ export default defineComponent({
     left: 0,
   }),
   computed: {
+    classnamesKnob(): string[] {
+      return [
+        'absolute',
+        'bg-primary-500',
+        'cursor-pointer',
+        'drop-shadow',
+        'h-5',
+        'rounded-full',
+        'w-5',
+        'z-10',
+      ]
+    },
+    classnamesLine(): string[] {
+      return ['absolute', 'bg-primary-200', 'h-full']
+    },
     ratio(): number {
       return Math.max(
         Math.min((this.modelValue - this.min) / (this.max - this.min), 1),
