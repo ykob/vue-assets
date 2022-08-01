@@ -32,6 +32,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    error: {
+      type: Boolean,
+      default: false,
+    },
     max: {
       type: Number,
       default: 1,
@@ -63,6 +67,8 @@ export default defineComponent({
 
       if (this.disabled === true) {
         classnamesColors = ['bg-neutral-400']
+      } else if (this.error === true) {
+        classnamesColors = ['bg-error-500']
       } else {
         classnamesColors = ['bg-primary-500']
       }
@@ -82,6 +88,8 @@ export default defineComponent({
 
       if (this.disabled === true) {
         classnamesColors = ['bg-neutral-300']
+      } else if (this.error === true) {
+        classnamesColors = ['bg-error-200']
       } else {
         classnamesColors = ['bg-primary-200']
       }
