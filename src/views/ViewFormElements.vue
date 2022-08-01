@@ -189,6 +189,26 @@
       :step="1.25"
     />
   </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" error showValue />
+    <input-slider
+      v-model="inputSlider2"
+      :max="100"
+      :min="0"
+      error
+      showValue
+      :step="2"
+    />
+    <input-slider
+      v-model="inputSlider3"
+      :max="20"
+      :min="0"
+      error
+      showValue
+      :step="1.25"
+    />
+  </div>
 </template>
 
 <script lang="ts">
