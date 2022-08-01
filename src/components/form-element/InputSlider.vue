@@ -32,25 +32,25 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    modelValue: {
+    max: {
       type: Number,
-      default: 0,
+      default: 1,
     },
     min: {
       type: Number,
       default: 0,
     },
-    max: {
+    modelValue: {
       type: Number,
-      default: 1,
-    },
-    step: {
-      type: Number,
-      default: 0.01,
+      default: 0,
     },
     showValue: {
       type: Boolean,
       default: false,
+    },
+    step: {
+      type: Number,
+      default: 0.01,
     },
   },
   data: () => ({
