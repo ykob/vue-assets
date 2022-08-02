@@ -59,7 +59,7 @@ export default defineComponent({
   },
   computed: {
     classnames(): string[] {
-      const colorClassnames = (
+      const classnamesColors = (
         buttonType: Semantics,
         disabled: boolean
       ): string[] => {
@@ -142,7 +142,7 @@ export default defineComponent({
             ]
         }
       }
-      const sizeClassnames = (buttonSize: ButtonSize): string[] => {
+      const classnamesSizes = (buttonSize: ButtonSize): string[] => {
         switch (buttonSize) {
           case 's':
             return [
@@ -167,8 +167,8 @@ export default defineComponent({
       }
 
       return [
-        ...colorClassnames(this.buttonType, this.disabled),
-        ...sizeClassnames(this.buttonSize),
+        ...classnamesColors(this.buttonType, this.disabled),
+        ...classnamesSizes(this.buttonSize),
         ...(this.circle ? ['drop-shadow-md', 'rounded-full'] : ['rounded']),
         this.disabled ? 'pointer-events-none' : 'hover:text-neutral-50',
         'bg-white',

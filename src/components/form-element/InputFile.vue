@@ -77,7 +77,7 @@ export default defineComponent({
   },
   computed: {
     classnamesMessage(): string[] {
-      const colorClassnames = (error: boolean): string[] => {
+      const classnamesColors = (error: boolean): string[] => {
         if (error === true) {
           return ['bg-error-50', 'border-error-500']
         } else {
@@ -86,7 +86,7 @@ export default defineComponent({
       }
 
       return [
-        ...colorClassnames(this.error),
+        ...classnamesColors(this.error),
         'border-2',
         'border-dashed',
         'px-4',

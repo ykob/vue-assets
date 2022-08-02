@@ -145,6 +145,70 @@
       multiple
     />
   </div>
+  <h2 class="mt-12 mb-4 text-3xl">Slider</h2>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" />
+    <input-slider v-model="inputSlider2" :max="100" :min="0" :step="2" />
+    <input-slider v-model="inputSlider3" :max="20" :min="0" :step="1.25" />
+  </div>
+  <h3 class="mb-4 text-xl">Show Value</h3>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" showValue />
+    <input-slider
+      v-model="inputSlider2"
+      :max="100"
+      :min="0"
+      showValue
+      :step="2"
+    />
+    <input-slider
+      v-model="inputSlider3"
+      :max="20"
+      :min="0"
+      showValue
+      :step="1.25"
+    />
+  </div>
+  <h3 class="mb-4 text-xl">Disabled</h3>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" disabled showValue />
+    <input-slider
+      v-model="inputSlider2"
+      disabled
+      :max="100"
+      :min="0"
+      showValue
+      :step="2"
+    />
+    <input-slider
+      v-model="inputSlider3"
+      disabled
+      :max="20"
+      :min="0"
+      showValue
+      :step="1.25"
+    />
+  </div>
+  <h3 class="mb-4 text-xl">Has Error</h3>
+  <div class="flex gap-4 mb-4">
+    <input-slider v-model="inputSlider1" error showValue />
+    <input-slider
+      v-model="inputSlider2"
+      :max="100"
+      :min="0"
+      error
+      showValue
+      :step="2"
+    />
+    <input-slider
+      v-model="inputSlider3"
+      :max="20"
+      :min="0"
+      error
+      showValue
+      :step="1.25"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -154,6 +218,7 @@ import CheckboxSingle from '@/components/form-element/CheckboxSingle.vue'
 import InputFile from '@/components/form-element/InputFile.vue'
 import InputImage from '@/components/form-element/InputImage.vue'
 import InputMultilineText from '@/components/form-element/InputMultilineText.vue'
+import InputSlider from '@/components/form-element/InputSlider.vue'
 import InputText from '@/components/form-element/InputText.vue'
 import RadioButton from '@/components/form-element/RadioButton.vue'
 import ToggleSwitch from '@/components/form-element/ToggleSwitch.vue'
@@ -166,6 +231,7 @@ export default defineComponent({
     InputFile,
     InputImage,
     InputMultilineText,
+    InputSlider,
     InputText,
     RadioButton,
     ToggleSwitch,
@@ -173,27 +239,33 @@ export default defineComponent({
   data: (): {
     checkArray: boolean[]
     checkBool: boolean
-    inputText: string
+    inputFile: FileList | null
+    inputImage: FileList | null
     inputMultilineText: string
+    inputSlider1: number
+    inputSlider2: number
+    inputSlider3: number
+    inputText: string
     radioValue: string
     toggleSwitchValue1: boolean
     toggleSwitchValue2: boolean
     toggleSwitchValueDisabled1: boolean
     toggleSwitchValueDisabled2: boolean
-    inputFile: FileList | null
-    inputImage: FileList | null
   } => ({
     checkArray: [],
     checkBool: false,
-    inputText: '',
+    inputFile: null,
+    inputImage: null,
     inputMultilineText: '',
+    inputSlider1: 0,
+    inputSlider2: 0,
+    inputSlider3: 0,
+    inputText: '',
     radioValue: '',
     toggleSwitchValue1: false,
     toggleSwitchValue2: false,
     toggleSwitchValueDisabled1: false,
     toggleSwitchValueDisabled2: true,
-    inputFile: null,
-    inputImage: null,
   }),
 })
 </script>
